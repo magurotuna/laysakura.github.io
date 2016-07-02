@@ -18,3 +18,4 @@ http://laysakura.hateblo.jp から移転しました。
 - [MySQL 5.6 で動くストレージエンジン・テンプレート](http://laysakura.hateblo.jp/entry/20130211/1360486479)
 - [perf statでL1,L2(,L3)キャッシュミス測定](http://laysakura.hateblo.jp/entry/20111015/1318738362)
 - [Pythonで色つきログを - rainbow_logging_handler をPyPIにリリースしました](http://laysakura.hateblo.jp/entry/2013/12/05/165232)
+- [Linux のスケジューリング調査と超低優先度プロセスの実装](http://www.eidos.ic.i.u-tokyo.ac.jp/~tau/lecture/operating_systems/2010/nakatani.pdf)
