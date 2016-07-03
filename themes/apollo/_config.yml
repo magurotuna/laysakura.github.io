@@ -1,7 +1,7 @@
 # Header
 menu:
   過去の投稿: /archives
-rss: /atom.xml
+rss: http://cloud.feedly.com/#subscription%2Ffeed%2FFhttps%3A%2F%2Flaysakura.github.io%2Fatom.xml
 
 # Content
 excerpt_link: 続きを読む
