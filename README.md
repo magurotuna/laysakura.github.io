@@ -26,3 +26,8 @@ git push origin ready
 # laysakura/hexo-theme-apollo レポジトリに feature/foobar ブランチとしてpushし、PR & mergeしておく
 git subtree push --prefix=themes/apollo git@github.com:laysakura/hexo-theme-apollo.git feature/foobar
 ```
+
+## トラブルシュート
+
+- `themes/xxx/` でCSSを更新したのに反映されない
+    - `hexo clean && hexo deploy --generate`
