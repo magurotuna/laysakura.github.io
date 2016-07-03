@@ -1,0 +1,113 @@
+a
+  color: color-link
+  text-decoration: none
+
+  &:hover
+    color: #2a8998
+
+strong, b
+  font-weight: bold
+
+em
+  font-style: italic
+
+code
+  background: color-code-background
+  color: color-code-inline
+  padding: 4px 8px
+  border-radius: 5px
+  text-shadow: 0 0 8px color-code-inline
+  display: -moz-inline-stack
+  display: inline-block
+  vertical-align: middle
+  zoom: .9
+  line-height: 1
+
+del
+  text-decoration: line-through
+
+sub, sup
+  font-size: 75%
+  line-height: 0
+  position: relative
+
+:root sub, :root sup
+  vertical-align: baseline
+
+sup
+  top: -0.5em
+
+sub
+  bottom: -0.2em
+
+acronym, abbr
+  border-bottom: 1px dotted
+  font-variant: normal
+
+abbr
+  cursor: help
+
+h1, h2, h3, h4, h5, h6
+  color: color-title
+  font-weight: bold
+  a
+    color: color-title
+    text-decoration: none
+    &:hover
+      color: color-title
+
+pre, code
+  font-family: font-mono
+  font-size 1em
+
+.left, .alignleft
+  float: left
+
+.right, .alignright
+  float: right
+
+.clearfix
+  &:after
+    content: ""
+    clear: both
+    display: block
+
+.circle
+  border-radius: 50%
+
+.label
+  font-size: .3em
+  font-family: Quicksand, sans-serif
+  font-weight: bold
+  color: color-background
+  background-color: color-link
+  border-radius: .5em
+  margin: 0 1em 0 0
+  padding: .3em .6em
+
+.fa
+  font-family: FontAwesome
+  font-size: 1em
+  line-height: 1em
+  display: inline-block
+  position: relative
+  cursor: pointer
+  text-align: center
+
+.fa-lg
+  font-size: 3em
+
+.fa-facebook-square
+  &:before
+    content: "\f082"
+    color: rgb(59, 89, 152)
+
+.fa-github-square
+  &:before
+    content: "\f092"
+    color: #333
+
+.fa-twitter-square
+  &:before
+    content: "\f081"
+    color: rgb(29, 161, 242)
