@@ -19,6 +19,10 @@ git subtree で `themes/apollo` を作っている。
 emacs  # themes/apollo/ 以下のファイルに変更を加える
 git add themes/apollo/
 git commit -m 'foobar'
-git subtree push --prefix=themes/apollo git@github.com:laysakura/hexo-theme-apollo.git feature/foobar
 
+# このレポジトリへのpush
+git push origin ready
+
+# laysakura/hexo-theme-apollo レポジトリに feature/foobar ブランチとしてpushし、PR & mergeしておく
+git subtree push --prefix=themes/apollo git@github.com:laysakura/hexo-theme-apollo.git feature/foobar
 ```
