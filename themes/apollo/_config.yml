@@ -1,0 +1,12 @@
+# Header
+menu:
+  過去の投稿: /archives
+rss: /atom.xml
+
+# Content
+excerpt_link: 続きを読む
+fancybox: true
+
+# Miscellaneous
+google_analytics:
+favicon: /favicon.png
