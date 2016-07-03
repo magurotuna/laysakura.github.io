@@ -68,6 +68,11 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: apollo
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
