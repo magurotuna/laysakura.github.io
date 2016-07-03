@@ -20,7 +20,7 @@ author_github: https://github.com/laysakura
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://laysakura.github.io
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :year/:month/:day/:id/
 permalink_defaults:
 
 # Directory
