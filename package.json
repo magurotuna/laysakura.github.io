@@ -16,6 +16,8 @@
     "hexo-renderer-marked": "^0.2.10",
     "hexo-server": "^0.2.0",
     "hexo-deployer-git": "~0.2.0",
-    "hexo-generator-feed": "~1.1.0"
+    "hexo-generator-feed": "~1.1.0",
+    "hexo-tag-hatenabookmark": "0.0.6",
+    "hexo-toc": "~1.0.1"
   }
 }

@@ -15,9 +15,13 @@ tags:
 
 <!-- more -->
 
+<!-- toc -->
+
 ## 副題
 
 素晴らしい文章
+
+### ruby
 
 ```ruby タイトル何でも書ける.rb
 puts 'hello world'
