@@ -5,10 +5,10 @@
     margin-top 15px
     padding 7px 15px
     border-radius 2px
-    text-shadow 0 0 1px #fff
+    text-shadow 0 0 1px #000
     line-height 1.6
     overflow auto
-    color #666
+    color color-code
     .gist-file
       border none
       font-family inherit
@@ -26,7 +26,7 @@
         color color-meta
         margin-top 5px
         padding 0
-        text-shadow 0 0 1px #fff
+        text-shadow 0 0 1px #000
         font-size 100%
         a
           color color-link
@@ -34,12 +34,12 @@
             color color-link
 
 figure.highlight
-  background color-code
+  background color-code-background
   border 1px solid color-border
   margin 0
   padding 7px 15px
   border-radius 2px
-  text-shadow 0 0 1px #fff
+  text-shadow 0 0 1px #000
   line-height 1.6
   overflow auto
   position relative
@@ -47,7 +47,7 @@ figure.highlight
   figcaption
     color color-meta
     margin-bottom 5px
-    text-shadow 0 0 1px #fff
+    text-shadow 0 0 1px #000
     a
       position absolute
       right 15px
@@ -77,76 +77,63 @@ figure.highlight
     text-align left
 
   .code
-    border-left 1px solid #fff
-    color #666
+    border-left 1px solid #666
+    color color-code
 
 pre
-  // Theme: Solarized - Light
+  // Theme: Monokai Sublime
   // More theme here: http://softwaremaniacs.org/media/soft/highlight/test.html
-  .comment
-  .template_comment
-  .diff .header
-  .doctype
-  .pi
-  .lisp .string
-  .javadoc
-    color #93a1a1
-    font-style italic
+  .strong
+  .emphasis
+    color: #a8a8a2
+
+  .bullet
+  .quote
+  .number
+  .regexp
+  .literal
+  .link
+    color: #ae81ff
+
+  .code
+  .title
+  .section
+  .selector-class
+    color: #a6e22e
+
+  .strong
+    font-weight: bold
+
+  .emphasis
+    font-style: italic
 
   .keyword
-  .winutils
-  .method
-  .addition
-  .css .tag
-  .request
-  .status
-  .nginx .title
-    color #859900
+  .selector-tag
+  .name
+  .attr
+    color: #f92672
 
-  .number
-  .command
-  .string
-  .tag .value
-  .phpdoc
-  .tex .formula
-  .regexp
-  .hexcolor
-    color #2aa198
-
-  .title
-  .localvars
-  .chunk
-  .decorator
-  .built_in
-  .identifier
-  .vhdl
-  .literal
-  .id
-    color #268bd2
-
-  .attribute
-  .variable
-  .lisp .body
-  .smalltalk .number
-  .constant
-  .class .title
-  .parent
-  .haskell .type
-    color #b58900
-
-  .preprocessor
-  .preprocessor .keyword
-  .shebang
   .symbol
-  .symbol .string
-  .diff .change
-  .special
-  .attr_selector
-  .important
-  .subst
-  .cdata
-  .clojure .title
-    color #cb4b16
+  .attribute
+    color: #66d9ef
 
+  .params
+  .class .title
+    color: color-code
+
+  .string
+  .type
+  .built_in
+  .builtin-name
+  .selector-id
+  .selector-attr
+  .selector-pseudo
+  .addition
+  .variable
+  .template-variable
+    color: #e6db74
+
+  .comment
   .deletion
-    color #dc322f
+  .meta
+    color: #75715e

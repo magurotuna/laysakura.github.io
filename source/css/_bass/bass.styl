@@ -12,8 +12,16 @@ em
   font-style: italic
 
 code
-  text-shadow: 0 1px #fff
-  padding: 0 0.3em
+  background: color-code-background
+  color: color-code-inline
+  padding: 4px 8px
+  border-radius: 5px
+  text-shadow: 0 0 8px color-code-inline
+  display: -moz-inline-stack
+  display: inline-block
+  vertical-align: middle
+  zoom: .9
+  line-height: 1
 
 del
   text-decoration: line-through
@@ -57,3 +65,49 @@ pre, code
 
 .right, .alignright
   float: right
+
+.clearfix
+  &:after
+    content: ""
+    clear: both
+    display: block
+
+.circle
+  border-radius: 50%
+
+.label
+  font-size: .3em
+  font-family: Quicksand, sans-serif
+  font-weight: bold
+  color: color-background
+  background-color: color-link
+  border-radius: .5em
+  margin: 0 1em 0 0
+  padding: .3em .6em
+
+.fa
+  font-family: FontAwesome
+  font-size: 1em
+  line-height: 1em
+  display: inline-block
+  position: relative
+  cursor: pointer
+  text-align: center
+
+.fa-lg
+  font-size: 3em
+
+.fa-facebook-square
+  &:before
+    content: "\f082"
+    color: rgb(59, 89, 152)
+
+.fa-github-square
+  &:before
+    content: "\f092"
+    color: #333
+
+.fa-twitter-square
+  &:before
+    content: "\f081"
+    color: rgb(29, 161, 242)
