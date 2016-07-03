@@ -14,20 +14,26 @@
 .blog-title
   float: left
   display: inline-block
-  font-size: 120%
+  font-size: 150%
   font-weight: bold
   padding-bottom: .2em
   letter-spacing: .2em
   margin: 10px 0
-  border-bottom: 5px solid color-title
   &:hover
+    transition: .4s
     border-color: color-link
     a
+      transition: .4s
       color: color-link
   a
     position: relative
     left: .1em
     padding: .4em 0
+  &:after
+    content: ""
+    display: block
+    height: 5px
+    background: linear-gradient(left, color-title, color-link 50%, color-link)
 
 .mobile-nav-panel
   display: none

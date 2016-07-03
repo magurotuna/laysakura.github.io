@@ -4,7 +4,7 @@
   margin-right: auto
 
 #main
-  padding-left: 200px
+  padding-left: 0
 
 .post
   margin-bottom: 5em
@@ -15,8 +15,12 @@
   
   .entry-title
     font-weight: bold
-    font-size: 220%
+    font-size: 180%
     margin: 0
+    a
+      &:hover
+        transition: .4s
+        color: color-link
 
 .article-devider
   width: 8%
@@ -25,9 +29,7 @@
   border-top: 5px solid #ddd
 
 .entry-meta-header
-  position: absolute
   top: .5em
-  left: -200px
   width: 180px
   font-size: 85%
   a
@@ -43,8 +45,9 @@
     font-weight: bold
     font-size: 120%
     a
-      color: color-title
+      color: color-pale
       &:hover
+        transition .4s
         color: color-link
 
   .commentscount
@@ -79,11 +82,11 @@
   h1
     font-size: 170%
   h2
-    font-size: 160%
-  h3
     font-size: 140%
-  h4
+  h3
     font-size: 130%
+  h4
+    font-size: 120%
   h5
     font-size: 110%
   h6
@@ -212,12 +215,33 @@
   .meta
     margin-bottom: .7em
 
+.article-more-link
+  text-align: center
+  a
+    padding: .5em 1em
+    transition: 0.2s
+    border-radius: .4em
+    border: 1px solid color-link
+    color: color-link
+    background-color: color-background
+    &:hover
+      transition: .4s
+      background-color: color-link
+      border: 1px solid color-link
+      color: #fff
+
 .article-tag-list
   padding: 0
 
 .article-tag-list-item
   float: left
   margin-right: 10px
-
   &:before
-    content: "#"
+    font-family: FontAwesome
+    font-size: 1em
+    line-height: 1em
+    display: inline-block
+    position: relative
+    cursor: pointer
+    text-align: center
+    content: "\f02b"
