@@ -6,9 +6,15 @@
 title: 俺とお前とlaysakura
 subtitle:
 description:
-author: Sho Nakatani a.k.a. laysakura
 language: ja
 timezone: Japan
+
+# Author
+author: Sho Nakatani a.k.a. laysakura
+author_email: lay.sakura@gmail.com
+author_twitter: https://twitter.com/laysakura
+author_facebook: https://www.facebook.com/lay.sakura
+author_github: https://github.com/laysakura
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -75,6 +81,9 @@ feed:
   path: atom.xml
   limit: 20
   hub:
+
+# External services
+disqus_shortname: laysakura
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
