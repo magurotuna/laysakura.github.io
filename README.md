@@ -20,6 +20,8 @@ emacs  # themes/apollo/ 以下のファイルに変更を加える
 git add themes/apollo/
 git commit -m 'foobar'
 
+cd ..
+
 # このレポジトリへのpush
 git push origin ready
 
