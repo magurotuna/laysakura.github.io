@@ -25,9 +25,11 @@ cd ..
 # このレポジトリへのpush
 git push origin ready
 
-# laysakura/hexo-theme-apollo レポジトリに feature/foobar ブランチとしてpushし、PR & mergeしておく
+# laysakura/hexo-theme-apollo レポジトリに feature/foobar ブランチとしてpush
 git subtree push --prefix=themes/apollo git@github.com:laysakura/hexo-theme-apollo.git feature/foobar
 ```
+
+https://github.com/laysakura/hexo-theme-apollo でPR & mergeしておく。
 
 ## トラブルシュート
 
