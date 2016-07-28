@@ -1,5 +1,6 @@
 ---
 title: はてなブログからgithub.ioに移転しました
+id: 1cir6fvic10000wjiuq19loade
 date: 2016-07-02 22:28:55
 tags:
 ---

@@ -1,5 +1,6 @@
 ---
 title: {{ title }}
+id: 'id-included-in-url'
 date: {{ date }}
 tags:
   - 金融

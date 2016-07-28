@@ -1,5 +1,6 @@
 ---
 title: 'Amazon EC2でクライアント証明書認証のVPNを構築'
+id: 'cir0gtu71000kibiu1skemk6c'
 tags:
   - テクノロジー
   - Linuxオペレーション
