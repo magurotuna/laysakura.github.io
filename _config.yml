@@ -81,6 +81,8 @@ feed:
   path: atom.xml
   limit: 20
   hub:
+sitemap:
+    path: sitemap.xml
 
 # External services
 disqus_shortname: laysakura
