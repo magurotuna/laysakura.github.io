@@ -82,7 +82,10 @@ feed:
   limit: 20
   hub:
 sitemap:
-    path: sitemap.xml
+  path: sitemap.xml
+emojis:
+  cdn: http://cdn.staticfile.org/emojify.js/0.9.5/emojis
+social_buttons:  # TODO たぶんこのキーは必須じゃないので、調査
 
 # External services
 disqus_shortname: laysakura
