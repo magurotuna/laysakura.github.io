@@ -44,15 +44,15 @@ body
 
 // ここで試す
 // LingatureSymbols
-font-lingature-symbols-path = "fonts/LingatureSymbols"
-font-lingature-symbols-version = "2.11"
-font-lingature-symbols-format = "woff"
+font-ligature-symbols-path = "fonts/LigatureSymbols"
+font-ligature-symbols-version = "2.11"
+font-ligature-symbols-format = "woff"
 
 
 // http://kudakurage.hatenadiary.com/entry/20120720/1342749116
 @font-face
   font-family: 'LigatureSymbolFont';
-  src: url(font-lingature-simbols-path + "LigatureSymbols-" + font-lingature-symbols-version + "." + font-lingature-symbols-format) format(font-lingature-symbols-format);
+  src: url(font-ligature-symbols-path + "-" + font-ligature-symbols-version + "." + font-ligature-symbols-format) format(font-ligature-symbols-format);
   font-weight: normal;
   font-style: normal;
 
@@ -104,10 +104,3 @@ font-lingature-symbols-format = "woff"
 .share-flat a:hover{
     opacity: 0.6;
 }
-
-.icon-hatebu
-  &:before
-    content: "B!"
-    font-family: Verdana
-    font-weight: bold
-    font-style normal
