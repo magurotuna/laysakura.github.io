@@ -32,15 +32,18 @@
 	</footer>
 
 
+<!-- TODO http://kudakurage.com/ligature_symbols/ これだとLINEとかはてブも全部ある -->
+<!-- TODO node_modules/hexo-cli/assets/themes/landscape/source/css/fonts/fontawesome-webfont.ttf みたいな感じで、ttfをレポジトリに入れるのもありっぽい。LigatureSymbolsはSIL Open Font Licenseで、埋め込みも大丈夫 -->
 
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
 
 <!--シェアボタン-->
 <div class="share-flat">
 <span style="font-size: 8px">シェアする</span>
 <div class="share-flat-inner">
 <!--はてブ-->
-<a href="http://b.hatena.ne.jp/entry/<%= encodeURIComponent(post.permalink) %>" class="hatena-bookmark-button" target="_blank" data-hatena-bookmark-title="{Title}" data-hatena-bookmark-layout="simple" title="このエントリーをはてなブックマークに追加"><i class="icon-hatebu"></i><br> <span class="hatebu-count small-text"><i class="fa fa-spinner fa-spin"></i></span></a>
+<a href="http://b.hatena.ne.jp/entry/<%= encodeURIComponent(post.permalink) %>" class="hatena-bookmark-button" target="_blank" data-hatena-bookmark-title="{Title}" data-hatena-bookmark-layout="simple" title="このエントリーをはてなブックマークに追加"><i class="lsf-icon" title="line"></i><br> <span class="hatebu-count small-text"><i class="fa fa-spinner fa-spin"></i></span></a>
 <!--Facebook-->
 <a href="http://www.facebook.com/sharer.php?u={URLEncodedPermalink}" class="facebook-button" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;" ><i class="fa fa-facebook"></i><br><span class="facebook-count small-text"><i class="fa fa-spinner fa-spin"></i></span></a>
 <!--Twitter-->

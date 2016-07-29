@@ -43,6 +43,29 @@ body
 
 
 // ここで試す
+// LingatureSymbols
+font-lingature-symbols-path = "fonts/LingatureSymbols"
+font-lingature-symbols-version = "2.11"
+font-lingature-symbols-format = "woff"
+
+
+// http://kudakurage.hatenadiary.com/entry/20120720/1342749116
+@font-face
+  font-family: 'LigatureSymbolFont';
+  src: url(font-lingature-simbols-path + "LigatureSymbols-" + font-lingature-symbols-version + "." + font-lingature-symbols-format) format(font-lingature-symbols-format);
+  font-weight: normal;
+  font-style: normal;
+
+.lsf
+  font-family: 'LigatureSymbolFont'
+  text-rendering: optimizeLegibility
+  &:before
+    content:attr(title)
+    margin-right:0.3em
+    font-size:130%
+    font-family: 'LigatureSymbolFont'
+    text-rendering: optimizeLegibility;
+
 /*シェアボタン*/
 .share-flat{
     margin-bottom: 10px;
