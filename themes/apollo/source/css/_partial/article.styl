@@ -22,14 +22,13 @@
         transition: .4s
         color: color-link
     &:before
-      font-family: FontAwesome
       font-size: .8em
       line-height: 1em
       display: inline-block
       position: relative
       cursor: pointer
       text-align: center
-      content: "\f101"
+      content: "#"
       color: color-link
 
 .article-devider
@@ -89,18 +88,36 @@
   h1, h2, h3, h4, h5, h6
     margin: 1em 0 .8em 0
     line-height: 1.5
+    &:before
+      padding-right 10px
+      font-size: .8em
+      line-height: 1em
+      display: inline-block
+      position: relative
+      text-align: center
+      color: color-link
   h1
     font-size: 170%
   h2
     font-size: 140%
+    &:before
+      content: "##"
   h3
     font-size: 130%
+    &:before
+      content: "###"
   h4
     font-size: 120%
+    &:before
+      content: "####"
   h5
     font-size: 110%
+    &:before
+      content: "#####"
   h6
     font-size: 100%
+    &:before
+      content: "######"
   dt
     font-weight: bold
   ul
