@@ -55,3 +55,5 @@ https://github.com/laysakura/hexo-theme-apollo でPR & mergeしておく。
 
 - `themes/xxx/` でCSSを更新したのに反映されない
     - `hexo clean && hexo deploy --generate`
+- `hexo deploy` で `ERROR Deployer not found: git` と言われて失敗する
+    - `npm install hexo-deployer-git --save`
