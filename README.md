@@ -23,10 +23,10 @@ git checkout ready
 rm package*.json
 rm -rf node_modules/
 
-hexo init ../xxx
+hexo init ../tmp
 
-cp ../x/package*.json .
-cp -r ../xxx/node_modules .
+cp ../tmp/package*.json .
+cp -r ../tmp/node_modules .
 
 hexo server  # 動作確認
 ```
