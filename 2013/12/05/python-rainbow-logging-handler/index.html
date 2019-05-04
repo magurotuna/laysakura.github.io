@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Pythonで色つきログを - rainbow_logging_handler をPyPIにリリースしました | 俺とお前とlaysakura</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="rainbow_logging_handlerをPyPIパッケージとしてリリースしました．上のスクショのようにカラフルにPythonでログが表示できます．">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pythonで色つきログを - rainbow_logging_handler をPyPIにリリースしました">
+<meta property="og:url" content="https://laysakura.github.io/2013/12/05/python-rainbow-logging-handler/index.html">
+<meta property="og:site_name" content="俺とお前とlaysakura">
+<meta property="og:description" content="rainbow_logging_handlerをPyPIパッケージとしてリリースしました．上のスクショのようにカラフルにPythonでログが表示できます．">
+<meta property="og:locale" content="ja">
+<meta property="og:image" content="https://laysakura.github.io/img/2013/12-05-python-rainbow-logging-handler.png">
+<meta property="og:updated_time" content="2019-05-04T06:11:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Pythonで色つきログを - rainbow_logging_handler をPyPIにリリースしました">
+<meta name="twitter:description" content="rainbow_logging_handlerをPyPIパッケージとしてリリースしました．上のスクショのようにカラフルにPythonでログが表示できます．">
+<meta name="twitter:image" content="https://laysakura.github.io/img/2013/12-05-python-rainbow-logging-handler.png">
+  
+    <link rel="alternative" href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttps%3A%2F%2Flaysakura.github.io%2Fatom.xml" title="俺とお前とlaysakura" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22289437-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<h1 class="blog-title">
+		<a href="/">俺とお前とlaysakura</a>
+	</h1>
+	<nav class="nav">
+		<ul>
+			<li><a href="/archives">過去の投稿</a></li>
+			<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+			<li><a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttps%3A%2F%2Flaysakura.github.io%2Fatom.xml" id="nav-rss-link" class="nav-icon" title="RSS Feed"></a></li>
+		</ul>
+	</nav>
+	<div id="search-form-wrap">
+		<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://laysakura.github.io"></form>
+	</div>
+</header>
+    <div id="main">
+      <article id="post-Pythonで色つきログを-rainbow-logging-handler-をPyPIにリリースしました" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2013/12/05/python-rainbow-logging-handler/" class="article-date">
+  <time datetime="2013-12-05T07:52:32.000Z" itemprop="datePublished">2013-12-05</time>
+</a>
+		</span>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      Pythonで色つきログを - rainbow_logging_handler をPyPIにリリースしました
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p><img src="/img/2013/12-05-python-rainbow-logging-handler.png" alt="RainbowLoggingHandler" width="auto" height="auto"></p>
+<p><a href="https://github.com/laysakura/rainbow_logging_handler" target="_blank" rel="noopener">rainbow_logging_handler</a>をPyPIパッケージとしてリリースしました．<br>上のスクショのようにカラフルにPythonでログが表示できます．</p>
+<a id="more"></a>
+<!-- toc -->
+<h2 id="売りポイント"><a href="#売りポイント" class="headerlink" title="売りポイント"></a>売りポイント</h2><h3 id="☆簡単に使える"><a href="#☆簡単に使える" class="headerlink" title="☆簡単に使える"></a>☆簡単に使える</h3><p>デフォルトの使い方でも綺麗に色付けされます．</p>
+<h3 id="☆自由度の高い色カスタマイズ"><a href="#☆自由度の高い色カスタマイズ" class="headerlink" title="☆自由度の高い色カスタマイズ"></a>☆自由度の高い色カスタマイズ</h3><p>下記のように，色は(変えたければ)細かく指定することができます．</p>
+<h3 id="☆ログ内容と色付けが分離されている"><a href="#☆ログ内容と色付けが分離されている" class="headerlink" title="☆ログ内容と色付けが分離されている"></a>☆ログ内容と色付けが分離されている</h3><p>標準モジュールの<code>logging</code>でフォーマットを指定し，その色を<code>rainbow_logging_handler.RainbowLoggingHandler</code>で調整(あるいはデフォルト色を利用)という風に使います．</p>
+<h3 id="☆ログのカラム-時刻，ファイル名，メッセージなど-毎に異なる色が付けられる"><a href="#☆ログのカラム-時刻，ファイル名，メッセージなど-毎に異なる色が付けられる" class="headerlink" title="☆ログのカラム(時刻，ファイル名，メッセージなど)毎に異なる色が付けられる"></a>☆ログのカラム(時刻，ファイル名，メッセージなど)毎に異なる色が付けられる</h3><p>対抗馬と思われる<a href="http://pythonhosted.org/logutils/colorize.html" target="_blank" rel="noopener">logutils.colorize.ColorizingStreamHandler</a>はログ1行ごとにしか無理．</p>
+<h3 id="☆どこでも使える"><a href="#☆どこでも使える" class="headerlink" title="☆どこでも使える"></a>☆どこでも使える</h3><p>Python 2.6, 2.7, 3.2, 3.3 でテストしてます．<br>Linux, Windowsでは色も確認済み．おそらくMac OSとかBSDとかでも動きます．<br>更に更に，Public Domainです．</p>
+<h2 id="インストール"><a href="#インストール" class="headerlink" title="インストール"></a>インストール</h2><p><code>pip</code>とか<code>easy_install</code>で入ります．</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ pip install rainbow_logging_handler</span><br><span class="line">$ <span class="comment"># または</span></span><br><span class="line">$ easy_install rainbow_logging_handler</span><br></pre></td></tr></table></figure>
+<h2 id="使い方"><a href="#使い方" class="headerlink" title="使い方"></a>使い方</h2><h3 id="基本の使い方"><a href="#基本の使い方" class="headerlink" title="基本の使い方"></a>基本の使い方</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">from</span> rainbow_logging_handler <span class="keyword">import</span> RainbowLoggingHandler</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main_func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># `logging` モジュールを使うための準備</span></span><br><span class="line">    logger = logging.getLogger(<span class="string">'test_logging'</span>)</span><br><span class="line">    logger.setLevel(logging.DEBUG)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># `RainbowLoggingHandler` を使う準備</span></span><br><span class="line">    handler = RainbowLoggingHandler(sys.stderr)</span><br><span class="line">    logger.addHandler(handler)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 多彩なログレベルで出力</span></span><br><span class="line">    logger.debug(<span class="string">"デバッグ"</span>)</span><br><span class="line">    logger.info(<span class="string">"インフォ"</span>)</span><br><span class="line">    logger.warn(<span class="string">"警告"</span>)</span><br><span class="line">    logger.error(<span class="string">"エラー"</span>)</span><br><span class="line">    logger.critical(<span class="string">"深刻なエラー"</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">raise</span> RuntimeError(<span class="string">"例外も色つきます"</span>)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        logger.exception(e)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main_func()</span><br></pre></td></tr></table></figure>
+<h3 id="色とログフォーマットのカスタマイズ"><a href="#色とログフォーマットのカスタマイズ" class="headerlink" title="色とログフォーマットのカスタマイズ"></a>色とログフォーマットのカスタマイズ</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">from</span> rainbow_logging_handler <span class="keyword">import</span> RainbowLoggingHandler</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main_func</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># `logging` モジュールを使うための準備</span></span><br><span class="line">    logger = logging.getLogger(<span class="string">'test_logging'</span>)</span><br><span class="line">    logger.setLevel(logging.DEBUG)</span><br><span class="line">    <span class="comment">## フォーマットのカスタマイズ</span></span><br><span class="line">    formatter = logging.Formatter(<span class="string">'%(pathname)s [%(module)s] - %(funcName)s:L%(lineno)d : %(message)s'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># `RainbowLoggingHandler` を使う準備</span></span><br><span class="line">    handler = RainbowLoggingHandler(</span><br><span class="line">        sys.stderr,</span><br><span class="line">        <span class="comment">## 色のカスタマイズ．</span></span><br><span class="line">        <span class="comment">## `pathname`, `module`, ... など，`logging.Formatter()` で使用したカラムの色を調整</span></span><br><span class="line">        color_pathname=(<span class="string">'black'</span>, <span class="string">'red'</span>  , <span class="literal">True</span>), color_module=(<span class="string">'yellow'</span>, <span class="literal">None</span>, <span class="literal">False</span>),</span><br><span class="line">        color_funcName=(<span class="string">'blue'</span> , <span class="string">'white'</span>, <span class="literal">True</span>), color_lineno=(<span class="string">'green'</span> , <span class="literal">None</span>, <span class="literal">False</span>),</span><br><span class="line">    )</span><br><span class="line">    handler.setFormatter(formatter)</span><br><span class="line">    logger.addHandler(handler)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># カスタムしたフォーマット，色で出力</span></span><br><span class="line">    logger.debug(<span class="string">"デバッグ"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main_func()</span><br></pre></td></tr></table></figure>
+<h2 id="開発の経緯"><a href="#開発の経緯" class="headerlink" title="開発の経緯"></a>開発の経緯</h2><p>Pythonで色付けられそうなロガーを頑張って探した結果，一番よさげなのが<br><a href="http://opensourcehacker.com/2013/03/14/ultima-python-logger-somewhere-over-the-rainbow/" target="_blank" rel="noopener">http://opensourcehacker.com/2013/03/14/ultima-python-logger-somewhere-over-the-rainbow/</a><br>でした．</p>
+<p>でもPyPIパッケージじゃないしライセンス的にもあんまり嬉しくなかったので，<br>作者の<a href="https://twitter.com/moo9000" target="_blank" rel="noopener">@moo9000</a>さんに「パッケージにしてよ」と言ったら「自分でやれ」って言われて作りました・・・</p>
+<p><blockquote class="twitter-tweet" data-conversation="none" lang="ja"><p><a href="https://twitter.com/laysakura" target="_blank" rel="noopener">@laysakura</a> Please haunt me if you need any help with it. Tips: <a href="http://t.co/nQ76IfUmK6" target="_blank" rel="noopener">http://t.co/nQ76IfUmK6</a></p>&mdash; Mikko Ohtamaa (@moo9000) <a href="https://twitter.com/moo9000/statuses/407786775382200320" target="_blank" rel="noopener">2013, 12月 3</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>パッケージ化の過程で色のカスタマイズとか小回りをよくした結果が今の<code>rainbow_logging_handler</code>です．</p>
+<h2 id="終わりに，そしてお詫び"><a href="#終わりに，そしてお詫び" class="headerlink" title="終わりに，そしてお詫び"></a>終わりに，そしてお詫び</h2><p>ログはカラフルな方が見る気が起きるような気がします．<br>皆様の開発の助けになれば幸いです．</p>
+<p>バグ報告やpullreqは<a href="https://github.com/laysakura/rainbow_logging_handler" target="_blank" rel="noopener">Github:rainbow_logging_handler</a>までお願いします．</p>
+<p>この記事は<a href="http://www.adventar.org/calendars/166" target="_blank" rel="noopener">Python Advent Calendar 2013</a>の記事として書きました．</p>
+<p>元々は「ユニットテスト, カバレッジ計測, ドキュメント生成なんかの開発ベストプラクティス書きます」と言っていたのですが，<br>それより喜ぶ人の多そうなカラフルなログの話にしちゃいました・・・</p>
+<p>ベストプラクティス云々はまたの機会に!</p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+    
+    <footer class="author-info clearfix">
+      <img class="author-picture circle" src="https://www.gravatar.com/avatar/cb02a2b3f429b7c938d1fe2665e8e342">
+      <div class="author-content right">
+        <div class="author-caption">
+          <span class="label">author</span>
+          Sho Nakatani a.k.a. laysakura
+        </div>
+        <p class="author-description">
+          東京大学大学院 情報理工学系研究科 電子情報学専攻 修士課程で並列分散処理・ストリーム処理・データベースを研究。<br>
+          2014年4月に株式会社ディー・エヌ・エーにエンジニアスペシャリストとして入社し、ソーシャルゲームのサーバサイド共通基盤の開発に従事。<br>
+          2016年8月より、オンライン証券会社<a href="https://folio-sec.com">株式会社FOLIO</a>に入社。バックエンドシステム開発・プロジェクトマネージメント・Engineering Managementに従事。<br>
+        </p>
+        <ul class="author-social-buttons">
+          <li class="author-social-button"><a class="fa fa-lg fa-twitter-square" href="https://twitter.com/laysakura"></a></li>
+          <li class="author-social-button"><a class="fa fa-lg fa-github-square" href="https://github.com/laysakura"></a></li>
+          <li class="author-social-button"><a class="fa fa-lg fa-facebook-square" href="https://www.facebook.com/lay.sakura"></a></li>
+        </ul>
+      </div>
+    </footer>
+    
+	
+    
+<nav id="article-nav">
+  
+    <a href="/2014/02/18/mysqlite/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          MySQLite: SQLiteデータベースを読み書きするMySQLストレージエンジン
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/10/11/perl-japanese-full-text-search/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          Perlで日本語全文検索できるCPANモジュール作りました
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread">
+
+  <!-- comment service provided by disqus -->
+  <script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    var disqus_config = function () {
+        this.page.url = https://laysakura.github.io/2013/12/05/python-rainbow-logging-handler/;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = https://laysakura.github.io/2013/12/05/python-rainbow-logging-handler/; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//laysakura.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:laysakura.github.io">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">俺とお前とlaysakura</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2019 Sho Nakatani a.k.a. laysakura<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+    
+<script>
+  var disqus_shortname = 'laysakura';
+  
+  var disqus_url = 'https://laysakura.github.io/2013/12/05/python-rainbow-logging-handler/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57791a9296b5772b"></script>
+
+</body>
+</html>

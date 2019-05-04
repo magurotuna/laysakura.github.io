@@ -3,27 +3,20 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>はてなブログからgithub.ioに移転しました | 俺とお前とlaysakura</title>
+  <title>Linux のスケジューリング調査と超低優先度プロセスの実装 | 俺とお前とlaysakura</title>
   <meta name="viewport" content="width=device-width">
-  <meta name="description" content="http://laysakura.hateblo.jp から移転しました。 今後は Hexo を使って github.io 上に記事を掲載していきます。 過去の人気記事はてブの比較的多かった過去の記事をピックアップしました。  MySQLite: SQLiteデータベースを読み書きするMySQLストレージエンジン  速いしスケールする並列CSVパーサ作った紆余曲折話  Perlで日本語全文検索でき">
+  <meta name="description" content="恩師田浦健次朗先生の講義、「オペレーティングシステム」で試験を受ける代わりにカーネルハックする課題をやりました。 目覚ましい成果とは言えない結果でしたが、調査や実装の記録を書いた発表スライドを残しておきます。 講義資料として上がってるPDF （なぜかはてブがいっぱいついてる） 上記のはいつ研究室のサーバから消されてもおかしくないので、ここでも配信しておきます。 元PDF">
+<meta name="keywords" content="Linux Kernel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="はてなブログからgithub.ioに移転しました">
-<meta property="og:url" content="https://laysakura.github.io/2016/07/02/1cir6fvic10000wjiuq19loade/index.html">
+<meta property="og:title" content="Linux のスケジューリング調査と超低優先度プロセスの実装">
+<meta property="og:url" content="https://laysakura.github.io/2011/01/25/linux-scheduling-low-prio-process/index.html">
 <meta property="og:site_name" content="俺とお前とlaysakura">
-<meta property="og:description" content="http://laysakura.hateblo.jp から移転しました。 今後は Hexo を使って github.io 上に記事を掲載していきます。 過去の人気記事はてブの比較的多かった過去の記事をピックアップしました。  MySQLite: SQLiteデータベースを読み書きするMySQLストレージエンジン  速いしスケールする並列CSVパーサ作った紆余曲折話  Perlで日本語全文検索でき">
+<meta property="og:description" content="恩師田浦健次朗先生の講義、「オペレーティングシステム」で試験を受ける代わりにカーネルハックする課題をやりました。 目覚ましい成果とは言えない結果でしたが、調査や実装の記録を書いた発表スライドを残しておきます。 講義資料として上がってるPDF （なぜかはてブがいっぱいついてる） 上記のはいつ研究室のサーバから消されてもおかしくないので、ここでも配信しておきます。 元PDF">
 <meta property="og:locale" content="ja">
-<meta property="og:image" content="http://b.hatena.ne.jp/entry/image/http://laysakura.github.io/20140218-MySQLite/">
-<meta property="og:image" content="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/2014/12/30/203044">
-<meta property="og:image" content="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/20131011/1381477266">
-<meta property="og:image" content="http://b.hatena.ne.jp/entry/image/http://www.eidos.ic.i.u-tokyo.ac.jp/~tau/lecture/operating_systems/2010/nakatani.pdf">
-<meta property="og:image" content="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/20130211/1360486479">
-<meta property="og:image" content="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/20111015/1318738362">
-<meta property="og:image" content="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/2013/12/05/165232">
 <meta property="og:updated_time" content="2019-05-04T06:11:18.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="はてなブログからgithub.ioに移転しました">
-<meta name="twitter:description" content="http://laysakura.hateblo.jp から移転しました。 今後は Hexo を使って github.io 上に記事を掲載していきます。 過去の人気記事はてブの比較的多かった過去の記事をピックアップしました。  MySQLite: SQLiteデータベースを読み書きするMySQLストレージエンジン  速いしスケールする並列CSVパーサ作った紆余曲折話  Perlで日本語全文検索でき">
-<meta name="twitter:image" content="http://b.hatena.ne.jp/entry/image/http://laysakura.github.io/20140218-MySQLite/">
+<meta name="twitter:title" content="Linux のスケジューリング調査と超低優先度プロセスの実装">
+<meta name="twitter:description" content="恩師田浦健次朗先生の講義、「オペレーティングシステム」で試験を受ける代わりにカーネルハックする課題をやりました。 目覚ましい成果とは言えない結果でしたが、調査や実装の記録を書いた発表スライドを残しておきます。 講義資料として上がってるPDF （なぜかはてブがいっぱいついてる） 上記のはいつ研究室のサーバから消されてもおかしくないので、ここでも配信しておきます。 元PDF">
   
     <link rel="alternative" href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttps%3A%2F%2Flaysakura.github.io%2Fatom.xml" title="俺とお前とlaysakura" type="application/atom+xml">
   
@@ -68,11 +61,11 @@
 	</div>
 </header>
     <div id="main">
-      <article id="post-はてなブログからgithub.ioに移転しました" class="post">
+      <article id="post-Linux-のスケジューリング調査と超低優先度プロセスの実装" class="post">
 	<footer class="entry-meta-header">
 		<span class="meta-elements date">
-			<a href="/2016/07/02/1cir6fvic10000wjiuq19loade/" class="article-date">
-  <time datetime="2016-07-02T13:28:55.000Z" itemprop="datePublished">2016-07-02</time>
+			<a href="/2011/01/25/linux-scheduling-low-prio-process/" class="article-date">
+  <time datetime="2011-01-25T06:30:00.000Z" itemprop="datePublished">2011-01-25</time>
 </a>
 		</span>
 	</footer>
@@ -81,26 +74,18 @@
 		
   
     <h1 class="article-title entry-title" itemprop="name">
-      はてなブログからgithub.ioに移転しました
+      Linux のスケジューリング調査と超低優先度プロセスの実装
     </h1>
   
 
 	</header>
 	<div class="entry-content">
 		
-    	<p><a href="http://laysakura.hateblo.jp" target="_blank" rel="noopener">http://laysakura.hateblo.jp</a> から移転しました。</p>
-<p>今後は <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> を使って github.io 上に記事を掲載していきます。</p>
-<h2 id="過去の人気記事"><a href="#過去の人気記事" class="headerlink" title="過去の人気記事"></a>過去の人気記事</h2><p>はてブの比較的多かった過去の記事をピックアップしました。</p>
-<ul>
-<li><a href="http://laysakura.github.io/20140218-MySQLite/">MySQLite: SQLiteデータベースを読み書きするMySQLストレージエンジン</a> <img src="http://b.hatena.ne.jp/entry/image/http://laysakura.github.io/20140218-MySQLite/"></li>
-<li><a href="http://laysakura.hateblo.jp/entry/2014/12/30/203044" target="_blank" rel="noopener">速いしスケールする並列CSVパーサ作った紆余曲折話</a> <img src="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/2014/12/30/203044"></li>
-<li><a href="http://laysakura.hateblo.jp/entry/20131011/1381477266" target="_blank" rel="noopener">Perlで日本語全文検索できるCPANモジュール作りました</a> <img src="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/20131011/1381477266"></li>
-<li><a href="http://www.eidos.ic.i.u-tokyo.ac.jp/~tau/lecture/operating_systems/2010/nakatani.pdf" target="_blank" rel="noopener">Linux のスケジューリング調査と超低優先度プロセスの実装</a> <img src="http://b.hatena.ne.jp/entry/image/http://www.eidos.ic.i.u-tokyo.ac.jp/~tau/lecture/operating_systems/2010/nakatani.pdf"></li>
-<li><a href="http://laysakura.hateblo.jp/entry/20130211/1360486479" target="_blank" rel="noopener">MySQL 5.6 で動くストレージエンジン・テンプレート</a> <img src="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/20130211/1360486479"></li>
-<li><a href="http://laysakura.hateblo.jp/entry/20111015/1318738362" target="_blank" rel="noopener">perf statでL1,L2(,L3)キャッシュミス測定</a> <img src="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/20111015/1318738362"></li>
-<li><a href="http://laysakura.hateblo.jp/entry/2013/12/05/165232" target="_blank" rel="noopener">Pythonで色つきログを - rainbow_logging_handler をPyPIにリリースしました</a> <img src="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/2013/12/05/165232"></li>
-</ul>
-<p>これらの記事はこちらのブログに転載し、元のはてなブログの記事からもこちらのブログへのリンクだけを残します。</p>
+    	<p>恩師<a href="https://www.eidos.ic.i.u-tokyo.ac.jp/~tau/" target="_blank" rel="noopener">田浦健次朗</a>先生の講義、「<a href="https://www.eidos.ic.i.u-tokyo.ac.jp/~tau/lecture/operating_systems/" target="_blank" rel="noopener">オペレーティングシステム</a>」で試験を受ける代わりにカーネルハックする課題をやりました。</p>
+<p>目覚ましい成果とは言えない結果でしたが、調査や実装の記録を書いた発表スライドを残しておきます。</p>
+<p><a href="https://www.eidos.ic.i.u-tokyo.ac.jp/~tau/lecture/operating_systems/2010/nakatani.pdf" target="_blank" rel="noopener">講義資料として上がってるPDF</a> （なぜかはてブがいっぱいついてる）</p>
+<p>上記のはいつ研究室のサーバから消されてもおかしくないので、ここでも配信しておきます。</p>
+<p><a href="/pdf/2011/01-25-linux-scheduling-low-prio-process.pdf">元PDF</a></p>
 
     
 	</div>
@@ -111,6 +96,8 @@
 			</span>
 			<span class="tags">
 				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-Kernel/">Linux Kernel</a></li></ul>
+
 			</span>
 		</div>
 	</footer>
@@ -139,24 +126,15 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/07/24/cir0gtu71000kibiu1skemk6c/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2011/10/11/perf-stat-performance-counters/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          Amazon EC2でクライアント証明書認証のVPNを構築
+          perf stat でパフォーマンスカウンタの値を直接指定し表示
         
       </div>
     </a>
   
-  
-    <a href="/2014/12/30/fast-scalable-parallel-csv-parser/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">
-        
-          速いしスケールする並列CSVパーサ作った紆余曲折話
-        
-      </div>
-    </a>
   
 </nav>
 
@@ -176,8 +154,8 @@
      *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
      */
     var disqus_config = function () {
-        this.page.url = https://laysakura.github.io/2016/07/02/1cir6fvic10000wjiuq19loade/;  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = https://laysakura.github.io/2016/07/02/1cir6fvic10000wjiuq19loade/; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = https://laysakura.github.io/2011/01/25/linux-scheduling-low-prio-process/;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = https://laysakura.github.io/2011/01/25/linux-scheduling-low-prio-process/; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
     (function() {  // DON'T EDIT BELOW THIS LINE
         var d = document, s = d.createElement('script');
@@ -215,7 +193,7 @@
 <script>
   var disqus_shortname = 'laysakura';
   
-  var disqus_url = 'https://laysakura.github.io/2016/07/02/1cir6fvic10000wjiuq19loade/';
+  var disqus_url = 'https://laysakura.github.io/2011/01/25/linux-scheduling-low-prio-process/';
   
   (function(){
     var dsq = document.createElement('script');

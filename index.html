@@ -202,6 +202,7 @@
 <li><a href="http://laysakura.hateblo.jp/entry/20111015/1318738362" target="_blank" rel="noopener">perf statでL1,L2(,L3)キャッシュミス測定</a> <img src="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/20111015/1318738362"></li>
 <li><a href="http://laysakura.hateblo.jp/entry/2013/12/05/165232" target="_blank" rel="noopener">Pythonで色つきログを - rainbow_logging_handler をPyPIにリリースしました</a> <img src="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/2013/12/05/165232"></li>
 </ul>
+<p>これらの記事はこちらのブログに転載し、元のはてなブログの記事からもこちらのブログへのリンクだけを残します。</p>
 
     
 	</div>
@@ -226,6 +227,380 @@
 
 
   
+    <article id="post-速いしスケールする並列CSVパーサ作った紆余曲折話" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2014/12/30/fast-scalable-parallel-csv-parser/" class="article-date">
+  <time datetime="2014-12-30T11:30:44.000Z" itemprop="datePublished">2014-12-30</time>
+</a>
+		</span>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2014/12/30/fast-scalable-parallel-csv-parser/">速いしスケールする並列CSVパーサ作った紆余曲折話</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+			<p>年の瀬にどうしてもCSVを並列にパースしたくなって、<a href="https://github.com/laysakura/PartialCsvParser" target="_blank" rel="noopener">PartialCsvParser</a>というC++のライブラリを作った。</p>
+<ul>
+<li>1スレッドでも高速だし複数スレッドで使うとちゃんとスケールする</li>
+<li>ヘッダファイルだけインクルードすればコンパイルなしで使える</li>
+<li>パブリックドメインなので自分のリポジトリに <code>git add</code> とかしてもおk</li>
+</ul>
+<p>という3拍子揃ったやつです。</p>
+<p>細かいことはプロジェクトのページを見ていただくとして、ブログには頑張ってベンチマークとった話と、全然スケールしなかったのに2行追加しただけでグンと並列性能が上がった話を書く。</p>
+			
+				<p class="article-more-link">
+					<a href="/2014/12/30/fast-scalable-parallel-csv-parser/#more">続きを読む</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/High-Performance-Computing/">High Performance Computing</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+    
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+    <article id="post-MySQLite-SQLiteデータベースを読み書きするMySQLストレージエンジン" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2014/02/18/mysqlite/" class="article-date">
+  <time datetime="2014-02-18T07:00:00.000Z" itemprop="datePublished">2014-02-18</time>
+</a>
+		</span>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2014/02/18/mysqlite/">MySQLite: SQLiteデータベースを読み書きするMySQLストレージエンジン</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p><a href="http://atnd.org/event/E0023540" target="_blank" rel="noopener">第2回 MariaDB/MySQL コミュニティ イベント</a>で、以前作っていたMySQLiteというMySQL/MariaDBのストレージエンジンの発表をしました。</p>
+<p>スライドはこちらです。</p>
+<p><a href="http://laysakura.github.io/20140218-MySQLite/">MySQLite: SQLiteデータベースを読み書きするMySQLストレージエンジン</a></p>
+<p>他の方の発表も楽しめました。<br>懇親会でMariaDB開発・セールスのおじさま方に「You look so cool!」って言われたのが一番嬉しかったです。</p>
+<p>お話を持ちかけてくれたり会場を提供してくださったDeNA様、ありがとうございました。</p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SQLite/">SQLite</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/データベース/">データベース</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+    
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+    <article id="post-Pythonで色つきログを-rainbow-logging-handler-をPyPIにリリースしました" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2013/12/05/python-rainbow-logging-handler/" class="article-date">
+  <time datetime="2013-12-05T07:52:32.000Z" itemprop="datePublished">2013-12-05</time>
+</a>
+		</span>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2013/12/05/python-rainbow-logging-handler/">Pythonで色つきログを - rainbow_logging_handler をPyPIにリリースしました</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+			<p><img src="/img/2013/12-05-python-rainbow-logging-handler.png" alt="RainbowLoggingHandler" width="auto" height="auto"></p>
+<p><a href="https://github.com/laysakura/rainbow_logging_handler" target="_blank" rel="noopener">rainbow_logging_handler</a>をPyPIパッケージとしてリリースしました．<br>上のスクショのようにカラフルにPythonでログが表示できます．</p>
+			
+				<p class="article-more-link">
+					<a href="/2013/12/05/python-rainbow-logging-handler/#more">続きを読む</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+    
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+    <article id="post-Perlで日本語全文検索できるCPANモジュール作りました" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2013/10/11/perl-japanese-full-text-search/" class="article-date">
+  <time datetime="2013-10-11T07:41:06.000Z" itemprop="datePublished">2013-10-11</time>
+</a>
+		</span>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2013/10/11/perl-japanese-full-text-search/">Perlで日本語全文検索できるCPANモジュール作りました</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+			<p>Perlで全文検索を手軽にできるようにするCPANモジュール，<a href="http://search.cpan.org/perldoc?Search::Fulltext" target="_blank" rel="noopener">Search::Fulltext</a> をリリースしました．<br>これ単品だと英語での全文検索ができるのですが，これまた拙作の <a href="http://search.cpan.org/perldoc?Search::Fulltext::Tokenizer::MeCab" target="_blank" rel="noopener">Search::Fulltext::Tokenizer::MeCab</a> と組み合わせて使うと <span style="font-weight:bold;">日本語全文検索</span> ができるようになります．</p>
+<p>ここでは日本語全文検索をするためのインストール方法と簡単な使い方などについて記述します．<br>尚，この記事を書いている時点での最新版は Search::Fulltext-1.02, Search::Fulltext::Tokenizer::MeCab-1.04 です．<br>最新の情報についてはperldocで確認するようにしてください．</p>
+			
+				<p class="article-more-link">
+					<a href="/2013/10/11/perl-japanese-full-text-search/#more">続きを読む</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/データベース/">データベース</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+    
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+    <article id="post-MySQL-5-6-で動くストレージエンジン・テンプレート" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2013/02/10/mysql5.6-storage-engine-template/" class="article-date">
+  <time datetime="2013-02-09T16:59:08.000Z" itemprop="datePublished">2013-02-10</time>
+</a>
+		</span>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2013/02/10/mysql5.6-storage-engine-template/">MySQL 5.6 で動くストレージエンジン・テンプレート</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+			<p>MySQL 5.6 で動く Skeleton Engine, <strong>Yet Another Skeleton Engine</strong> を Github で公開してます．<br><a href="https://github.com/laysakura/mysql-YetAnotherSkeletonEngine" target="_blank" rel="noopener">https://github.com/laysakura/mysql-YetAnotherSkeletonEngine</a></p>
+<p>Skeleton Engine は MySQL のストレージエンジンを作成するためのテンプレートです．<br>オリジナルのものは<br><a href="http://www.sourcefiles.org/Databases/Utilities/" target="_blank" rel="noopener">http://www.sourcefiles.org/Databases/Utilities/</a><br>の skeleton_engine-0.7.tar.gz でダウンロード可能でした(2013/02/10 現在)が，古いバージョンの MySQL を前提としており，MySQL 5.6 にオリジナルのままの Skeleton Engine を組込むことはできません．<br>オリジナルのものが MySQL 5.6 で使えない理由は最後の節に記載します．</p>
+<p>そこで Yet Another Skeleton Engine と名付けまして，MySQL 5.6 で動くストレージエンジンのテンプレートを公開しました．<br>本エントリでは，まず Yet Another Skeleton Engine の使い方を記し，次にメモ程度にリポジトリ作成作業のログを記します．</p>
+			
+				<p class="article-more-link">
+					<a href="/2013/02/10/mysql5.6-storage-engine-template/#more">続きを読む</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/データベース/">データベース</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+    
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+    <article id="post-真・SSEを使って8flops-clockを実現する" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2012/01/06/sse-8flops-clock/" class="article-date">
+  <time datetime="2012-01-06T03:43:46.000Z" itemprop="datePublished">2012-01-06</time>
+</a>
+		</span>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2012/01/06/sse-8flops-clock/">真・SSEを使って8flops/clockを実現する</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+			<p><a href="http://atnd.org/events/21910" target="_blank" rel="noopener">カーネル／VM Advent Calendar</a> の34日目として書きます．<br>記事の内容自体はこのイベントと関係ありませんので，どなたでもお楽しみ下さいませ．</p>
+<p>今回は <a href="http://d.hatena.ne.jp/laysakura/20111113/1321155826" target="_blank" rel="noopener">自分の前回の記事</a> で見つけた誤りを訂正しつつ，<br>Intelの一部CPUがサポートするSSE(Streaming SIMD Extensions)命令により1clockで8個の単精度浮動小数点演算を行なう方法を紹介します．</p>
+<p>なるべく前回の記事とは独立した記述を心がけます．</p>
+			
+				<p class="article-more-link">
+					<a href="/2012/01/06/sse-8flops-clock/#more">続きを読む</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/High-Performance-Computing/">High Performance Computing</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+    
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+    <article id="post-perf-statでL1-L2-L3-キャッシュミス測定" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2011/10/15/perf-stat-L1-L2-L3-cache-miss/" class="article-date">
+  <time datetime="2011-10-15T04:12:42.000Z" itemprop="datePublished">2011-10-15</time>
+</a>
+		</span>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2011/10/15/perf-stat-L1-L2-L3-cache-miss/">perf statでL1,L2(,L3)キャッシュミス測定</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+			<h2 id="はじめに"><a href="#はじめに" class="headerlink" title="はじめに"></a>はじめに</h2><p>この記事は，<a href="/2011/10/11/perf-stat-performance-counters">前回のエントリ</a>の続きものです．<br>まだご覧になっていない方は，前回分をお読みになってからこちらの記事を見てください．</p>
+			
+				<p class="article-more-link">
+					<a href="/2011/10/15/perf-stat-L1-L2-L3-cache-miss/#more">続きを読む</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/High-Performance-Computing/">High Performance Computing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-Kernel/">Linux Kernel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linuxオペレーション/">Linuxオペレーション</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+    
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
     </div>

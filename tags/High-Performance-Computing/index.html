@@ -3,11 +3,11 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>タグ: Linuxオペレーション | 俺とお前とlaysakura</title>
+  <title>タグ: High Performance Computing | 俺とお前とlaysakura</title>
   <meta name="viewport" content="width=device-width">
   <meta property="og:type" content="website">
 <meta property="og:title" content="俺とお前とlaysakura">
-<meta property="og:url" content="https://laysakura.github.io/tags/Linuxオペレーション/index.html">
+<meta property="og:url" content="https://laysakura.github.io/tags/High-Performance-Computing/index.html">
 <meta property="og:site_name" content="俺とお前とlaysakura">
 <meta property="og:locale" content="ja">
 <meta name="twitter:card" content="summary">
@@ -58,11 +58,11 @@
     <div id="main">
       
   
-    <article id="post-Amazon-EC2でクライアント証明書認証のVPNを構築" class="post">
+    <article id="post-速いしスケールする並列CSVパーサ作った紆余曲折話" class="post">
 	<footer class="entry-meta-header">
 		<span class="meta-elements date">
-			<a href="/2016/07/24/cir0gtu71000kibiu1skemk6c/" class="article-date">
-  <time datetime="2016-07-24T10:30:00.000Z" itemprop="datePublished">2016-07-24</time>
+			<a href="/2014/12/30/fast-scalable-parallel-csv-parser/" class="article-date">
+  <time datetime="2014-12-30T11:30:44.000Z" itemprop="datePublished">2014-12-30</time>
 </a>
 		</span>
 	</footer>
@@ -71,20 +71,24 @@
 		
   
     <h1 itemprop="name" class="entry-title">
-      <a class="article-title" href="/2016/07/24/cir0gtu71000kibiu1skemk6c/">Amazon EC2でクライアント証明書認証のVPNを構築</a>
+      <a class="article-title" href="/2014/12/30/fast-scalable-parallel-csv-parser/">速いしスケールする並列CSVパーサ作った紆余曲折話</a>
     </h1>
   
 
 	</header>
 	<div class="entry-content">
 		
-			<p><img src="/img/2016/07-14-structure.png" alt="構成図" width="auto" height="auto"></p>
-<p>高いセキュリティが要求されるLAN内のサーバに自宅などのリモートからSSHログインしたい場合、VPNが有効です。<br>VPNを使うと、リモートからLAN内に仮想的に参加することができるので、プライベートIPアドレスのみが割り振られたサーバにもSSHログインできるようになります。</p>
-<p>VPNには色々な認証方式がありますが、SSL-VPNプロトコルでクライアント証明書方式の認証を行えば、誰がいつVPNに参加したのかを高い信頼度でログに記録することができます。</p>
-<p>本記事では、OpenVPNを使ったSSL-VPNの構築方法をAmazon EC2での構築も踏まえ詳しく紹介します。</p>
+			<p>年の瀬にどうしてもCSVを並列にパースしたくなって、<a href="https://github.com/laysakura/PartialCsvParser" target="_blank" rel="noopener">PartialCsvParser</a>というC++のライブラリを作った。</p>
+<ul>
+<li>1スレッドでも高速だし複数スレッドで使うとちゃんとスケールする</li>
+<li>ヘッダファイルだけインクルードすればコンパイルなしで使える</li>
+<li>パブリックドメインなので自分のリポジトリに <code>git add</code> とかしてもおk</li>
+</ul>
+<p>という3拍子揃ったやつです。</p>
+<p>細かいことはプロジェクトのページを見ていただくとして、ブログには頑張ってベンチマークとった話と、全然スケールしなかったのに2行追加しただけでグンと並列性能が上がった話を書く。</p>
 			
 				<p class="article-more-link">
-					<a href="/2016/07/24/cir0gtu71000kibiu1skemk6c/#more">続きを読む</a>
+					<a href="/2014/12/30/fast-scalable-parallel-csv-parser/#more">続きを読む</a>
 				</p>
       
     
@@ -96,7 +100,60 @@
 			</span>
 			<span class="tags">
 				
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linuxオペレーション/">Linuxオペレーション</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VPN/">VPN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/セキュリティ/">セキュリティ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/テクノロジー/">テクノロジー</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/High-Performance-Computing/">High Performance Computing</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+    
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+    <article id="post-真・SSEを使って8flops-clockを実現する" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2012/01/06/sse-8flops-clock/" class="article-date">
+  <time datetime="2012-01-06T03:43:46.000Z" itemprop="datePublished">2012-01-06</time>
+</a>
+		</span>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2012/01/06/sse-8flops-clock/">真・SSEを使って8flops/clockを実現する</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+			<p><a href="http://atnd.org/events/21910" target="_blank" rel="noopener">カーネル／VM Advent Calendar</a> の34日目として書きます．<br>記事の内容自体はこのイベントと関係ありませんので，どなたでもお楽しみ下さいませ．</p>
+<p>今回は <a href="http://d.hatena.ne.jp/laysakura/20111113/1321155826" target="_blank" rel="noopener">自分の前回の記事</a> で見つけた誤りを訂正しつつ，<br>Intelの一部CPUがサポートするSSE(Streaming SIMD Extensions)命令により1clockで8個の単精度浮動小数点演算を行なう方法を紹介します．</p>
+<p>なるべく前回の記事とは独立した記述を心がけます．</p>
+			
+				<p class="article-more-link">
+					<a href="/2012/01/06/sse-8flops-clock/#more">続きを読む</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/High-Performance-Computing/">High Performance Computing</a></li></ul>
 
 			</span>
 		</div>

@@ -3,11 +3,11 @@
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="utf-8">
   
-  <title>タグ: Linuxオペレーション | 俺とお前とlaysakura</title>
+  <title>タグ: Linux Kernel | 俺とお前とlaysakura</title>
   <meta name="viewport" content="width=device-width">
   <meta property="og:type" content="website">
 <meta property="og:title" content="俺とお前とlaysakura">
-<meta property="og:url" content="https://laysakura.github.io/tags/Linuxオペレーション/index.html">
+<meta property="og:url" content="https://laysakura.github.io/tags/Linux-Kernel/index.html">
 <meta property="og:site_name" content="俺とお前とlaysakura">
 <meta property="og:locale" content="ja">
 <meta name="twitter:card" content="summary">
@@ -57,60 +57,6 @@
 </header>
     <div id="main">
       
-  
-    <article id="post-Amazon-EC2でクライアント証明書認証のVPNを構築" class="post">
-	<footer class="entry-meta-header">
-		<span class="meta-elements date">
-			<a href="/2016/07/24/cir0gtu71000kibiu1skemk6c/" class="article-date">
-  <time datetime="2016-07-24T10:30:00.000Z" itemprop="datePublished">2016-07-24</time>
-</a>
-		</span>
-	</footer>
-	
-	<header class="entry-header">
-		
-  
-    <h1 itemprop="name" class="entry-title">
-      <a class="article-title" href="/2016/07/24/cir0gtu71000kibiu1skemk6c/">Amazon EC2でクライアント証明書認証のVPNを構築</a>
-    </h1>
-  
-
-	</header>
-	<div class="entry-content">
-		
-			<p><img src="/img/2016/07-14-structure.png" alt="構成図" width="auto" height="auto"></p>
-<p>高いセキュリティが要求されるLAN内のサーバに自宅などのリモートからSSHログインしたい場合、VPNが有効です。<br>VPNを使うと、リモートからLAN内に仮想的に参加することができるので、プライベートIPアドレスのみが割り振られたサーバにもSSHログインできるようになります。</p>
-<p>VPNには色々な認証方式がありますが、SSL-VPNプロトコルでクライアント証明書方式の認証を行えば、誰がいつVPNに参加したのかを高い信頼度でログに記録することができます。</p>
-<p>本記事では、OpenVPNを使ったSSL-VPNの構築方法をAmazon EC2での構築も踏まえ詳しく紹介します。</p>
-			
-				<p class="article-more-link">
-					<a href="/2016/07/24/cir0gtu71000kibiu1skemk6c/#more">続きを読む</a>
-				</p>
-      
-    
-	</div>
-	<footer class="entry-footer">
-		<div class="entry-meta-footer">
-			<span class="category">
-				
-			</span>
-			<span class="tags">
-				
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linuxオペレーション/">Linuxオペレーション</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VPN/">VPN</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/セキュリティ/">セキュリティ</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/テクノロジー/">テクノロジー</a></li></ul>
-
-			</span>
-		</div>
-	</footer>
-    
-	
-</article>
-
-
-	<hr class="article-devider">
-
-
-
-
   
     <article id="post-perf-statでL1-L2-L3-キャッシュミス測定" class="post">
 	<footer class="entry-meta-header">
@@ -200,6 +146,57 @@
 			<span class="tags">
 				
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/High-Performance-Computing/">High Performance Computing</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-Kernel/">Linux Kernel</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linuxオペレーション/">Linuxオペレーション</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+    
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
+    <article id="post-Linux-のスケジューリング調査と超低優先度プロセスの実装" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2011/01/25/linux-scheduling-low-prio-process/" class="article-date">
+  <time datetime="2011-01-25T06:30:00.000Z" itemprop="datePublished">2011-01-25</time>
+</a>
+		</span>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2011/01/25/linux-scheduling-low-prio-process/">Linux のスケジューリング調査と超低優先度プロセスの実装</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<p>恩師<a href="https://www.eidos.ic.i.u-tokyo.ac.jp/~tau/" target="_blank" rel="noopener">田浦健次朗</a>先生の講義、「<a href="https://www.eidos.ic.i.u-tokyo.ac.jp/~tau/lecture/operating_systems/" target="_blank" rel="noopener">オペレーティングシステム</a>」で試験を受ける代わりにカーネルハックする課題をやりました。</p>
+<p>目覚ましい成果とは言えない結果でしたが、調査や実装の記録を書いた発表スライドを残しておきます。</p>
+<p><a href="https://www.eidos.ic.i.u-tokyo.ac.jp/~tau/lecture/operating_systems/2010/nakatani.pdf" target="_blank" rel="noopener">講義資料として上がってるPDF</a> （なぜかはてブがいっぱいついてる）</p>
+<p>上記のはいつ研究室のサーバから消されてもおかしくないので、ここでも配信しておきます。</p>
+<p><a href="/pdf/2011/01-25-linux-scheduling-low-prio-process.pdf">元PDF</a></p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-Kernel/">Linux Kernel</a></li></ul>
 
 			</span>
 		</div>
