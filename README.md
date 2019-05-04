@@ -11,7 +11,7 @@ https://laysakura.github.io
 3. `hexo clean && hexo server` で localhost:4000 を待ち受けるので、ブラウザで見た目確認。
 4. `git add source/_posts/ ; git commit ; git push origin article/xxx`
 5. https://github.com/laysakura/laysakura.github.io で `article/xxx` から `ready` に向けたPRを作成し、マージ。
-6. `hexo deploy --generate` すると、よしなに記事が公開される。
+6. `hexo clean && hexo deploy --generate` すると、よしなに記事が公開される。
 
 ### `hexo` のインストールから始めるとき
 
@@ -28,7 +28,7 @@ hexo init ../tmp
 cp ../tmp/package*.json .
 cp -r ../tmp/node_modules .
 
-hexo server  # 動作確認
+hexo clean && hexo server  # 動作確認
 ```
 
 ## テーマ変更の流れ
@@ -55,7 +55,7 @@ https://github.com/laysakura/hexo-theme-apollo でPR & mergeしておく。
 
 - `themes/xxx/` でCSSを更新したのに反映されない
     - `hexo clean && hexo deploy --generate`
-- `hexo deploy` で `ERROR Deployer not found: git` と言われて失敗する
-    - `npm install hexo-deployer-git --save`
 - なんか下書きの記事が残っちゃう
     - `hexo clean`
+- `hexo deploy` で `ERROR Deployer not found: git` と言われて失敗する
+    - `npm install hexo-deployer-git --save`
