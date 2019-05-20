@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Rustで簡潔データ構造のライブラリを3つリリースしました | 俺とお前とlaysakura</title>
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="活動報告。Rustで簡潔データ構造のライブラリを3つリリースしました。 これらの簡潔データ構造に興味のある方、APIを綺麗に整備してREADMEも分かりやすく書いたつもりですので、是非スターをお願いします✌">
+<meta name="keywords" content="Rust,Succinct Data Structure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rustで簡潔データ構造のライブラリを3つリリースしました">
+<meta property="og:url" content="https://laysakura.github.io/2019/05/20/rust-succinct/index.html">
+<meta property="og:site_name" content="俺とお前とlaysakura">
+<meta property="og:description" content="活動報告。Rustで簡潔データ構造のライブラリを3つリリースしました。 これらの簡潔データ構造に興味のある方、APIを綺麗に整備してREADMEも分かりやすく書いたつもりですので、是非スターをお願いします✌">
+<meta property="og:locale" content="ja">
+<meta property="og:updated_time" content="2019-05-20T14:07:00.762Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Rustで簡潔データ構造のライブラリを3つリリースしました">
+<meta name="twitter:description" content="活動報告。Rustで簡潔データ構造のライブラリを3つリリースしました。 これらの簡潔データ構造に興味のある方、APIを綺麗に整備してREADMEも分かりやすく書いたつもりですので、是非スターをお願いします✌">
+  
+    <link rel="alternative" href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttps%3A%2F%2Flaysakura.github.io%2Fatom.xml" title="俺とお前とlaysakura" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22289437-2']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+</html>
+<body>
+  <div id="container">
+    <div class="mobile-nav-panel">
+	<i class="icon-reorder icon-large"></i>
+</div>
+<header id="header">
+	<h1 class="blog-title">
+		<a href="/">俺とお前とlaysakura</a>
+	</h1>
+	<nav class="nav">
+		<ul>
+			<li><a href="/archives">過去の投稿</a></li>
+			<li><a id="nav-search-btn" class="nav-icon" title="Search"></a></li>
+			<li><a href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttps%3A%2F%2Flaysakura.github.io%2Fatom.xml" id="nav-rss-link" class="nav-icon" title="RSS Feed"></a></li>
+		</ul>
+	</nav>
+	<div id="search-form-wrap">
+		<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://laysakura.github.io"></form>
+	</div>
+</header>
+    <div id="main">
+      <article id="post-Rustで簡潔データ構造のライブラリを3つリリースしました" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2019/05/20/rust-succinct/" class="article-date">
+  <time datetime="2019-05-20T13:03:29.000Z" itemprop="datePublished">2019-05-20</time>
+</a>
+		</span>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 class="article-title entry-title" itemprop="name">
+      Rustで簡潔データ構造のライブラリを3つリリースしました
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+    	<div style="text-align:center">
+  <div class="github-card" data-user="laysakura" data-repo="fid-rs" data-width="400" data-theme="default" data-target data-client-id data-client-secret></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+ <div style="text-align:center">
+  <div class="github-card" data-user="laysakura" data-repo="louds-rs" data-width="400" data-theme="default" data-target data-client-id data-client-secret></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+ <div style="text-align:center">
+  <div class="github-card" data-user="laysakura" data-repo="trie-rs" data-width="400" data-theme="default" data-target data-client-id data-client-secret></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+
+<p>活動報告。<br>Rustで簡潔データ構造のライブラリを3つリリースしました。</p>
+<p>これらの簡潔データ構造に興味のある方、APIを綺麗に整備してREADMEも分かりやすく書いたつもりですので、是非スターをお願いします✌</p>
+<a id="more"></a>
+<!-- toc -->
+<p><a href="https://sigmod2018.org/sigmod_research_list.shtml" target="_blank" rel="noopener">SIGMOD 2018の論文</a>を眺めていて、Best Paperの<a href="http://www.pdl.cmu.edu/PDL-FTP/Storage/surf_sigmod18.pdf" target="_blank" rel="noopener">SuRF: Practical Range Query Filtering with Fast Succinct Tries</a>を読んで興味を持ちました。<br>一致検索も範囲検索も高速にできる省メモリなデータ構造SuRFに関する論文。どうやら簡潔データ構造を使っているらしい。</p>
+<p>簡潔データ構造というのは、データサイズが情報理論的下限と同程度に小さく、かつ非圧縮なデータ構造と比肩する高速さを兼ね備えたデータ構造です。<br>チート級ですが、多くの場合「データの追加や更新には対応してない」などの制約があるため、使う場面は限定されたりします。</p>
+<p>SuRFの基礎となるFST (Fast Succinct Trie)というデータ構造も簡潔データ構造なのですが、FSTの基礎にはさらにLOUDSという簡潔データ構造があり、さらにさらにLOUDSの基礎にはFIDという簡潔データ構造があり…<br>久しぶりに趣味プログラミングする題材としては面白そうだったので、FID -&gt; LOUDS -&gt; FST -&gt; SuRF という順序でSIGMOD 2018 Best Paperのデータ構造を実装することにしました。</p>
+<p>プログラミング言語はRustを使いました。Rustは出た当初から興味があったのですが、この機会に手を出すことができました。<br>簡潔データ構造は省メモリがウリなので、データのメモリ配置が簡素（JavaやLLのように、勝手に実体とそれを指すオブジェクトを構築しない。GCもない）である必要があります。<br>それができる言語で実用的なのはC, C++, Rustくらいしか思い浮かびませんでしたが、新しいチャレンジとしてRustを使いました。</p>
+<p>Rustは良い言語ですね。自分はC, C++の経験はまあまあありますが、Rustは所有権・移動・借用という概念をコンパイル時の制約として取り入れており、C, C++で心の中で気にしていたことがコンパイルで強制されます。<br>最初はネット上のドキュメントで学び、騙し騙し書いていて、コンパイルを通すのにも難儀しましたが、『プログラミングRust』を1.5周くらい読むとスムーズに書けるようになってきました。</p>
+<iframe style="width:120px;height:240px;display:block;margin:0px auto;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="https://rcm-fe.amazon-adsystem.com/e/cm?ref=tf_til&t=laysakura-22&m=amazon&o=9&p=8&l=as1&IS2=1&detail=1&asins=4873118557&linkId=74455160778f584d9def1c73a4afe83d&bc1=000000&lt1=_top&fc1=333333&lc1=0066c0&bg1=ffffff&f=ifr"><br>    </iframe>
+
+<p>で、FID, LOUDSのライブラリを作ってCrates.io (Rustライブラリのregistry。JavaのMaven, RubyのRubyGemsみたいなやつ)にも登録しました。<br><div style="text-align:center">
+  <div class="github-card" data-user="laysakura" data-repo="fid-rs" data-width="400" data-theme="default" data-target data-client-id data-client-secret></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+ <div style="text-align:center">
+  <div class="github-card" data-user="laysakura" data-repo="louds-rs" data-width="400" data-theme="default" data-target data-client-id data-client-secret></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+</p>
+<p>その後FST -&gt; SuRFと実装しようと思ってましたが、LOUDSのAPIにちょっと自身が持てず、FSTよりも簡単な応用例としてLOUDSベースのTrieを作ってみました。<br><div style="text-align:center">
+  <div class="github-card" data-user="laysakura" data-repo="trie-rs" data-width="400" data-theme="default" data-target data-client-id data-client-secret></div>
+</div>
+<script src="/github-card-lib/githubcard.js"></script>
+</p>
+<p>そしてGWが明けて力尽き今に至ります。</p>
+<p>1~2年ぶりくらいの趣味プログラミングでしたが、案外勘は鈍らないものですね。また時間を見つけてSuRFまで実装したいと思います。</p>
+
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rust/">Rust</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Succinct-Data-Structure/">Succinct Data Structure</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+    
+    <footer class="author-info clearfix">
+      <img class="author-picture circle" src="https://www.gravatar.com/avatar/cb02a2b3f429b7c938d1fe2665e8e342">
+      <div class="author-content right">
+        <div class="author-caption">
+          <span class="label">author</span>
+          Sho Nakatani a.k.a. laysakura
+        </div>
+        <p class="author-description">
+          東京大学大学院 情報理工学系研究科 電子情報学専攻 修士課程で並列分散処理・ストリーム処理・データベースを研究。<br>
+          2014年4月に株式会社ディー・エヌ・エーにエンジニアスペシャリストとして入社し、ソーシャルゲームのサーバサイド共通基盤の開発に従事。<br>
+          2016年8月より、オンライン証券会社<a href="https://folio-sec.com">株式会社FOLIO</a>に入社。バックエンドシステム開発・プロジェクトマネージメント・Engineering Managementに従事。<br>
+        </p>
+        <ul class="author-social-buttons">
+          <li class="author-social-button"><a class="fa fa-lg fa-twitter-square" href="https://twitter.com/laysakura"></a></li>
+          <li class="author-social-button"><a class="fa fa-lg fa-github-square" href="https://github.com/laysakura"></a></li>
+          <li class="author-social-button"><a class="fa fa-lg fa-facebook-square" href="https://www.facebook.com/lay.sakura"></a></li>
+        </ul>
+      </div>
+    </footer>
+    
+	
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/02/18/backlog-world-2018/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">
+        
+          Backlog Worldにブログレポーター枠で参加しました
+        
+      </div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread">
+
+  <!-- comment service provided by disqus -->
+  <script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    var disqus_config = function () {
+        this.page.url = https://laysakura.github.io/2019/05/20/rust-succinct/;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = https://laysakura.github.io/2019/05/20/rust-succinct/; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() {  // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//laysakura.disqus.com/embed.js';
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+    </div>
+    <div class="mb-search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="hidden" name="q" value="site:laysakura.github.io">
+  </form>
+</div>
+<footer id="footer">
+	<h1 class="footer-blog-title">
+		<a href="/">俺とお前とlaysakura</a>
+	</h1>
+	<span class="copyright">
+		&copy; 2019 Sho Nakatani a.k.a. laysakura<br>
+		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+	</span>
+</footer>
+    
+<script>
+  var disqus_shortname = 'laysakura';
+  
+  var disqus_url = 'https://laysakura.github.io/2019/05/20/rust-succinct/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//go.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+  </div>
+
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57791a9296b5772b"></script>
+
+</body>
+</html>
