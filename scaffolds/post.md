@@ -32,8 +32,14 @@ tags:
 
 素晴らしい文章
 
-### ruby
+### コードを書く
 
 ```ruby タイトル何でも書ける.rb
 puts 'hello world'
 ```
+
+### githubのrepoをcardで埋め込む
+
+{% githubCard user:laysakura repo:rust-fid %}
+
+詳しくは https://github.com/Gisonrg/hexo-github-card を見よ。
