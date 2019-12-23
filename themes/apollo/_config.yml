@@ -6,6 +6,8 @@ rss: http://cloud.feedly.com/#subscription%2Ffeed%2Fhttps%3A%2F%2Flaysakura.gith
 # Content
 excerpt_link: 続きを読む
 fancybox: true
+toc:
+  maxdepth: 4
 
 # Miscellaneous
 google_analytics: UA-22289437-2
