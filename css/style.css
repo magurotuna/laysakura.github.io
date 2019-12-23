@@ -133,11 +133,10 @@ em {
   font-style: italic;
 }
 code {
-  background: #23241f;
-  color: #55ddf3;
+  background: #dedede;
+  color: #4f5759;
   padding: 4px 8px;
   border-radius: 5px;
-  text-shadow: 0 0 8px #55ddf3;
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
