@@ -91,7 +91,19 @@
 <p>細かいことはプロジェクトのページを見ていただくとして、ブログには頑張ってベンチマークとった話と、全然スケールしなかったのに2行追加しただけでグンと並列性能が上がった話を書く。</p>
 <a id="more"></a>
 <!-- toc -->
-<h1 id="作る前の勝算"><a href="#作る前の勝算" class="headerlink" title="作る前の勝算"></a>作る前の勝算</h1><p>CSVの並列パーサライブラリって、ちゃんとスケールするものが割と簡単に作れると思って作り始めた。</p>
+<ul>
+<li><a href="#作る前の勝算">作る前の勝算</a></li>
+<li><a href="#作ったらスケールしなかった">作ったらスケールしなかった</a></li>
+<li><a href="#じゃあどうしたか">じゃあどうしたか</a></li>
+<li><a href="#ベンチマークを頑張ってとった話">ベンチマークを頑張ってとった話</a><ul>
+<li><a href="#google-spreadsheetはデータ集計に超便利">Google SpreadSheetはデータ集計に超便利</a></li>
+<li><a href="#ディスクのパフォーマンス計測にはfiohttpsgithubcomaxboefioがよかった">ディスクのパフォーマンス計測には<a href="https://github.com/axboe/fio" target="_blank" rel="noopener">fio</a>がよかった</a></li>
+</ul>
+</li>
+<li><a href="#まとめ">まとめ</a></li>
+</ul>
+<!-- tocstop -->
+<h1><span id="作る前の勝算">作る前の勝算</span></h1><p>CSVの並列パーサライブラリって、ちゃんとスケールするものが割と簡単に作れると思って作り始めた。</p>
 <p>例えば2並列にしたいなら、CSVファイルを前半と後半に2分割してあげて、それぞれのスレッドで別々にパースしてあげれば良いだけ。</p>
 <p>なぜスケールさせられると思ったかというと、</p>
 <ul>
@@ -100,14 +112,14 @@
 </ul>
 <p>という感じ。</p>
 <p>最初からHDDでの並列性能は無視して、SSDで戦おうと思ってた。</p>
-<h1 id="作ったらスケールしなかった"><a href="#作ったらスケールしなかった" class="headerlink" title="作ったらスケールしなかった"></a>作ったらスケールしなかった</h1><p>バージョン 0.1.0 を作ってみてSSD環境でベンチマークを取ってみたら全然スケールしなかった。寝た。</p>
+<h1><span id="作ったらスケールしなかった">作ったらスケールしなかった</span></h1><p>バージョン 0.1.0 を作ってみてSSD環境でベンチマークを取ってみたら全然スケールしなかった。寝た。</p>
 <p>起きて悔しくなったのでもう一度色々測定してみると、<br>CSVファイルがページキャッシュに乗っている時、つまりオンメモリな処理をしているときは割とちゃんとスケールすることが分かった。</p>
 <p>となるとやっぱりSSDアクセスがボトルネックになっていそう。<br>少し頭を巡らせパーサの気持ちになって考えてみた。</p>
 <p>そもそもPartialCsvParserは、パース対象のCSVファイルをどかんと丸ごと<code>mmap(2)</code>している。<br>で、複数のスレッドが同じタイミングで離れた領域(ページ)を触りに行く。</p>
 <p>このとき、基本的には要求したページがまだメモリに乗っていなくてページフォルトを起こし、ディスクまで取りに行くことになるのだけど、複数のスレッドから同タイミングで「そこそこ離れているけどそんなに離れてはいない」ページを取りに行くことになる。</p>
 <p>SSDの気持ちになるとこれはつらい。そもそもSSDが並列性能出るのって、SSDはフラッシュメモリ(板)の集合であって、別々の板のページを同時に要求されたら同時に返せるからってのが基本…なはず。</p>
 <p>(SSDチップにもよるけど、)CSVファイルなんてものはサイズもたかが知れているし、同一の板にちょい離れたページを同タイミングで要求しているような気がして、そうするとSSDアクセスがボトルネックになっても仕方がないなという気持ちになった。</p>
-<h1 id="じゃあどうしたか"><a href="#じゃあどうしたか" class="headerlink" title="じゃあどうしたか"></a>じゃあどうしたか</h1><p>やっぱり複数スレッドから同時にCSVなんて小さいファイルにアクセスしに行くのは大変だろうと思ったので、CSVファイルをドカンと1スレッドでメモリに乗せたくなった。</p>
+<h1><span id="じゃあどうしたか">じゃあどうしたか</span></h1><p>やっぱり複数スレッドから同時にCSVなんて小さいファイルにアクセスしに行くのは大変だろうと思ったので、CSVファイルをドカンと1スレッドでメモリに乗せたくなった。</p>
 <p>1スレッドでドカンとやると、ランダムアクセスじゃなくてシーケンシャルアクセスになる。<br>いくらランダムアクセスに強いと言われるSSDといえど、シーケンシャルアクセスのほうが1桁は速い。</p>
 <p>とはいえ<code>mmap(2)</code>を捨てて<code>read(2)</code>使うのは、コーディング上面倒くさい。とても面倒くさい。</p>
 <p><code>mmap(2)</code>でシーケンシャルに読みたい、つまりプリフェッチできないもんかなぁ。<br>と思って探したら<code>madvise(2)</code>が見つかった。</p>
@@ -117,10 +129,10 @@
 <p>たった2行。コメント入れても3行。</p>
 <p>これがうまくいって、グンとスケールするようになった。</p>
 <p>結局のところ、まだスレッド作ってない段階でガツッとシーケンシャルアクセスしてメモリに乗せるので、<br>図らずもHDDでもちゃんとスケールするようになった。</p>
-<h1 id="ベンチマークを頑張ってとった話"><a href="#ベンチマークを頑張ってとった話" class="headerlink" title="ベンチマークを頑張ってとった話"></a>ベンチマークを頑張ってとった話</h1><p>年末で実家にこもれたので、まとまった時間とってそこそこしっかりベンチマークをとれた。</p>
+<h1><span id="ベンチマークを頑張ってとった話">ベンチマークを頑張ってとった話</span></h1><p>年末で実家にこもれたので、まとまった時間とってそこそこしっかりベンチマークをとれた。</p>
 <p>どんな風にベンチマークとったかなどは、<a href="https://github.com/laysakura/PartialCsvParser/tree/master/benchmark" target="_blank" rel="noopener">ここ</a> にかなりしっかり書いた(つもり)。</p>
 <p>ここではすぐに役立ちそうなことを2点ほど。</p>
-<h2 id="Google-SpreadSheetはデータ集計に超便利"><a href="#Google-SpreadSheetはデータ集計に超便利" class="headerlink" title="Google SpreadSheetはデータ集計に超便利"></a>Google SpreadSheetはデータ集計に超便利</h2><p>学生時代はExcelとかGnuplot (ｳｯｱﾀﾏｶﾞ) とか使ってベンチマーク結果を集計してたけど、会社でGoogle Drive使うこと増えてきたし、<br>試しにGoogle SpreadSheetでデータ集計してみた。</p>
+<h2><span id="google-spreadsheetはデータ集計に超便利">Google SpreadSheetはデータ集計に超便利</span></h2><p>学生時代はExcelとかGnuplot (ｳｯｱﾀﾏｶﾞ) とか使ってベンチマーク結果を集計してたけど、会社でGoogle Drive使うこと増えてきたし、<br>試しにGoogle SpreadSheetでデータ集計してみた。</p>
 <p>これが大当たりで、</p>
 <ul>
 <li>実験結果の集計に使うレベルならExcelと遜色なく使える</li>
@@ -128,11 +140,11 @@
 <li>生データやグラフを簡単に公開できる。特にグラフは自動で画像ファイルにしてくれたりする</li>
 </ul>
 <p>と最高だった。</p>
-<h2 id="ディスクのパフォーマンス計測にはfioがよかった"><a href="#ディスクのパフォーマンス計測にはfioがよかった" class="headerlink" title="ディスクのパフォーマンス計測にはfioがよかった"></a>ディスクのパフォーマンス計測には<a href="https://github.com/axboe/fio" target="_blank" rel="noopener">fio</a>がよかった</h2><p><code>hdparm</code>とか<code>bonnie++</code>とか、世の中には色々とディスクのベンチマークをとるためのツールが存在している。</p>
+<h2><span id="ディスクのパフォーマンス計測にはfioがよかった">ディスクのパフォーマンス計測にはがよかった</span></h2><p><code>hdparm</code>とか<code>bonnie++</code>とか、世の中には色々とディスクのベンチマークをとるためのツールが存在している。</p>
 <p>そんな中で<a href="https://github.com/axboe/fio" target="_blank" rel="noopener">fio</a>はダントツで使いやすかった。<br>こんな感じで、短い設定ファイル作ってコマンドライン引数にそれだけ渡せば何かそれっぽい結果が出てくる。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ vim random-read-mem.fio</span><br><span class="line">[random-read]</span><br><span class="line">rw=randread</span><br><span class="line">size=512m</span><br><span class="line">directory=/dev/shm</span><br><span class="line"></span><br><span class="line">$ vim sequential-read-hdd.fio</span><br><span class="line">[sequential-read]</span><br><span class="line">rw=<span class="built_in">read</span></span><br><span class="line">size=512m</span><br><span class="line">directory=/dev/shm</span><br><span class="line"></span><br><span class="line">$ fio random-read-mem.fio</span><br></pre></td></tr></table></figure>
 <p>root権限いらないのもポイント高い。</p>
-<h1 id="まとめ"><a href="#まとめ" class="headerlink" title="まとめ"></a>まとめ</h1><p>2014年も終わろうとしてるのにCSVなんて使う人少ないでしょうけど、どうしてもCSVをパースしたくなったらPartialCsvParserのことを思い出してください。</p>
+<h1><span id="まとめ">まとめ</span></h1><p>2014年も終わろうとしてるのにCSVなんて使う人少ないでしょうけど、どうしてもCSVをパースしたくなったらPartialCsvParserのことを思い出してください。</p>
 
     
 	</div>

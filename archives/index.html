@@ -58,6 +58,67 @@
     <div id="main">
       
   
+    <article id="post-二分木-Rustではじめるデータ構造とアルゴリズム（第1回）" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2019/12/22/rust-DataStructures-Algorithm-BinaryTree/" class="article-date">
+  <time datetime="2019-12-22T06:04:14.000Z" itemprop="datePublished">2019-12-22</time>
+</a>
+		</span>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2019/12/22/rust-DataStructures-Algorithm-BinaryTree/">二分木 - Rustではじめるデータ構造とアルゴリズム（第1回）</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+			<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Binary_tree.svg/384px-Binary_tree.svg.png" alt="簡単な二分木（引用元: Wikipedia）" width="400" height="333"></p>
+<p>Rustの特徴のひとつは、所有権(ownership)・移動(move)・借用(borrow)の概念です。これらがコンパイル時に厳格にチェックされることにより、古くから未定義挙動でプログラマを悩ませてきたダングリングポインタなどの問題がなくなり、メモリ安全性がもたらされます。</p>
+<p>しかし一方で、自分で多少複雑なデータ構造を定義しようとする場合にはコンパイルを通すだけでもかなりの知識・力量が要求されます。</p>
+<p>この（不定期）連載では、 <strong>Rustではじめるデータ構造とアルゴリズム</strong> と題し、プログラミングコンテストなどでよく見かける基礎的なデータ構造とアルゴリズムを、できるだけシンプルにRustで実装していきます。 <code>&amp;</code>, <code>&amp;mut</code>, <code>Box</code>, <code>Rc</code>, <code>Cell</code>, <code>RefCell</code> などの使い分けや、なぜそれを使う必要があるかの解説を、実例を通して行います。</p>
+<p>第1回は、最もシンプルな木構造である <strong>二分木</strong> を取り扱います。基礎的な木構造なので、再帰・深さ優先探索・幅優先探索のエッセンスを集中的に理解することが期待できます。</p>
+<p>各回共通し、以下のような構成を予定しています。</p>
+<ol>
+<li>データ構造の説明と、Rustでの定義</li>
+<li>関連するアルゴリズムの説明と、（汎用的に実装できる場合は）Rustでの実装</li>
+<li>定義したデータ構造とアルゴリズムを使って、プログラミングコンテストの問題を解いてみる</li>
+</ol>
+			
+				<p class="article-more-link">
+					<a href="/2019/12/22/rust-DataStructures-Algorithm-BinaryTree/#more">続きを読む</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rust/">Rust</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+    
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
     <article id="post-プレイイングマネージャーのポテンシャルエナジー理論" class="post">
 	<footer class="entry-meta-header">
 		<span class="meta-elements date">
@@ -288,7 +349,7 @@
 
 
   
-    <article id="post-はてなブログからgithub.ioに移転しました" class="post">
+    <article id="post-はてなブログからgithub.ioに移転しました" class="post">
 	<footer class="entry-meta-header">
 		<span class="meta-elements date">
 			<a href="/2016/07/02/1cir6fvic10000wjiuq19loade/" class="article-date">
@@ -310,15 +371,15 @@
 		
     	<p><a href="http://laysakura.hateblo.jp" target="_blank" rel="noopener">http://laysakura.hateblo.jp</a> から移転しました。</p>
 <p>今後は <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> を使って github.io 上に記事を掲載していきます。</p>
-<h2 id="過去の人気記事"><a href="#過去の人気記事" class="headerlink" title="過去の人気記事"></a>過去の人気記事</h2><p>はてブの比較的多かった過去の記事をピックアップしました。</p>
+<h2><span id="過去の人気記事">過去の人気記事</span></h2><p>はてブの比較的多かった過去の記事をピックアップしました。</p>
 <ul>
-<li><a href="http://laysakura.github.io/20140218-MySQLite/">MySQLite: SQLiteデータベースを読み書きするMySQLストレージエンジン</a> <img src="http://b.hatena.ne.jp/entry/image/http://laysakura.github.io/20140218-MySQLite/"></li>
-<li><a href="http://laysakura.hateblo.jp/entry/2014/12/30/203044" target="_blank" rel="noopener">速いしスケールする並列CSVパーサ作った紆余曲折話</a> <img src="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/2014/12/30/203044"></li>
-<li><a href="http://laysakura.hateblo.jp/entry/20131011/1381477266" target="_blank" rel="noopener">Perlで日本語全文検索できるCPANモジュール作りました</a> <img src="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/20131011/1381477266"></li>
-<li><a href="http://www.eidos.ic.i.u-tokyo.ac.jp/~tau/lecture/operating_systems/2010/nakatani.pdf" target="_blank" rel="noopener">Linux のスケジューリング調査と超低優先度プロセスの実装</a> <img src="http://b.hatena.ne.jp/entry/image/http://www.eidos.ic.i.u-tokyo.ac.jp/~tau/lecture/operating_systems/2010/nakatani.pdf"></li>
-<li><a href="http://laysakura.hateblo.jp/entry/20130211/1360486479" target="_blank" rel="noopener">MySQL 5.6 で動くストレージエンジン・テンプレート</a> <img src="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/20130211/1360486479"></li>
-<li><a href="http://laysakura.hateblo.jp/entry/20111015/1318738362" target="_blank" rel="noopener">perf statでL1,L2(,L3)キャッシュミス測定</a> <img src="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/20111015/1318738362"></li>
-<li><a href="http://laysakura.hateblo.jp/entry/2013/12/05/165232" target="_blank" rel="noopener">Pythonで色つきログを - rainbow_logging_handler をPyPIにリリースしました</a> <img src="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/2013/12/05/165232"></li>
+<li><a href="http://laysakura.github.io/20140218-MySQLite/">MySQLite: SQLiteデータベースを読み書きするMySQLストレージエンジン</a> <img class="hatebu" src="http://b.hatena.ne.jp/entry/image/http://laysakura.github.io/20140218-MySQLite/"></li>
+<li><a href="http://laysakura.hateblo.jp/entry/2014/12/30/203044" target="_blank" rel="noopener">速いしスケールする並列CSVパーサ作った紆余曲折話</a> <img class="hatebu" src="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/2014/12/30/203044"></li>
+<li><a href="http://laysakura.hateblo.jp/entry/20131011/1381477266" target="_blank" rel="noopener">Perlで日本語全文検索できるCPANモジュール作りました</a> <img class="hatebu" src="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/20131011/1381477266"></li>
+<li><a href="http://www.eidos.ic.i.u-tokyo.ac.jp/~tau/lecture/operating_systems/2010/nakatani.pdf" target="_blank" rel="noopener">Linux のスケジューリング調査と超低優先度プロセスの実装</a> <img class="hatebu" src="http://b.hatena.ne.jp/entry/image/http://www.eidos.ic.i.u-tokyo.ac.jp/~tau/lecture/operating_systems/2010/nakatani.pdf"></li>
+<li><a href="http://laysakura.hateblo.jp/entry/20130211/1360486479" target="_blank" rel="noopener">MySQL 5.6 で動くストレージエンジン・テンプレート</a> <img class="hatebu" src="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/20130211/1360486479"></li>
+<li><a href="http://laysakura.hateblo.jp/entry/20111015/1318738362" target="_blank" rel="noopener">perf statでL1,L2(,L3)キャッシュミス測定</a> <img class="hatebu" src="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/20111015/1318738362"></li>
+<li><a href="http://laysakura.hateblo.jp/entry/2013/12/05/165232" target="_blank" rel="noopener">Pythonで色つきログを - rainbow_logging_handler をPyPIにリリースしました</a> <img class="hatebu" src="http://b.hatena.ne.jp/entry/image/http://laysakura.hateblo.jp/entry/2013/12/05/165232"></li>
 </ul>
 <p>これらの記事はこちらのブログに転載し、元のはてなブログの記事からもこちらのブログへのリンクだけを残します。</p>
 
@@ -543,59 +604,6 @@
 			<span class="tags">
 				
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/データベース/">データベース</a></li></ul>
-
-			</span>
-		</div>
-	</footer>
-    
-	
-</article>
-
-
-	<hr class="article-devider">
-
-
-
-
-  
-    <article id="post-MySQL-5-6-で動くストレージエンジン・テンプレート" class="post">
-	<footer class="entry-meta-header">
-		<span class="meta-elements date">
-			<a href="/2013/02/10/mysql5.6-storage-engine-template/" class="article-date">
-  <time datetime="2013-02-09T16:59:08.000Z" itemprop="datePublished">2013-02-10</time>
-</a>
-		</span>
-	</footer>
-	
-	<header class="entry-header">
-		
-  
-    <h1 itemprop="name" class="entry-title">
-      <a class="article-title" href="/2013/02/10/mysql5.6-storage-engine-template/">MySQL 5.6 で動くストレージエンジン・テンプレート</a>
-    </h1>
-  
-
-	</header>
-	<div class="entry-content">
-		
-			<p>MySQL 5.6 で動く Skeleton Engine, <strong>Yet Another Skeleton Engine</strong> を Github で公開してます．<br><a href="https://github.com/laysakura/mysql-YetAnotherSkeletonEngine" target="_blank" rel="noopener">https://github.com/laysakura/mysql-YetAnotherSkeletonEngine</a></p>
-<p>Skeleton Engine は MySQL のストレージエンジンを作成するためのテンプレートです．<br>オリジナルのものは<br><a href="http://www.sourcefiles.org/Databases/Utilities/" target="_blank" rel="noopener">http://www.sourcefiles.org/Databases/Utilities/</a><br>の skeleton_engine-0.7.tar.gz でダウンロード可能でした(2013/02/10 現在)が，古いバージョンの MySQL を前提としており，MySQL 5.6 にオリジナルのままの Skeleton Engine を組込むことはできません．<br>オリジナルのものが MySQL 5.6 で使えない理由は最後の節に記載します．</p>
-<p>そこで Yet Another Skeleton Engine と名付けまして，MySQL 5.6 で動くストレージエンジンのテンプレートを公開しました．<br>本エントリでは，まず Yet Another Skeleton Engine の使い方を記し，次にメモ程度にリポジトリ作成作業のログを記します．</p>
-			
-				<p class="article-more-link">
-					<a href="/2013/02/10/mysql5.6-storage-engine-template/#more">続きを読む</a>
-				</p>
-      
-    
-	</div>
-	<footer class="entry-footer">
-		<div class="entry-meta-footer">
-			<span class="category">
-				
-			</span>
-			<span class="tags">
-				
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/データベース/">データベース</a></li></ul>
 
 			</span>
 		</div>

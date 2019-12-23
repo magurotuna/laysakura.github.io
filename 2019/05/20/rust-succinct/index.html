@@ -98,6 +98,7 @@
 <p>これらの簡潔データ構造に興味のある方、APIを綺麗に整備してREADMEも分かりやすく書いたつもりですので、是非スターをお願いします✌</p>
 <a id="more"></a>
 <!-- toc -->
+<!-- tocstop -->
 <p><a href="https://sigmod2018.org/sigmod_research_list.shtml" target="_blank" rel="noopener">SIGMOD 2018の論文</a>を眺めていて、Best Paperの<a href="http://www.pdl.cmu.edu/PDL-FTP/Storage/surf_sigmod18.pdf" target="_blank" rel="noopener">SuRF: Practical Range Query Filtering with Fast Succinct Tries</a>を読んで興味を持ちました。<br>一致検索も範囲検索も高速にできる省メモリなデータ構造SuRFに関する論文。どうやら簡潔データ構造を使っているらしい。</p>
 <p>簡潔データ構造というのは、データサイズが情報理論的下限と同程度に小さく、かつ非圧縮なデータ構造と比肩する高速さを兼ね備えたデータ構造です。<br>チート級ですが、多くの場合「データの追加や更新には対応してない」などの制約があるため、使う場面は限定されたりします。</p>
 <p>SuRFの基礎となるFST (Fast Succinct Trie)というデータ構造も簡潔データ構造なのですが、FSTの基礎にはさらにLOUDSという簡潔データ構造があり、さらにさらにLOUDSの基礎にはFIDという簡潔データ構造があり…<br>久しぶりに趣味プログラミングする題材としては面白そうだったので、FID -&gt; LOUDS -&gt; FST -&gt; SuRF という順序でSIGMOD 2018 Best Paperのデータ構造を実装することにしました。</p>

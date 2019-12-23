@@ -857,7 +857,7 @@ pre .meta {
   border: 0;
   border-top: 3px solid #d5d5d5;
 }
-.entry-content a img {
+.entry-content img.hatebu {
   margin-left: 0.5em;
   display: inline;
 }
