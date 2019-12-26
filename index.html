@@ -58,6 +58,61 @@
     <div id="main">
       
   
+    <article id="post-二分探索木-Rustで始めるデータ構造とアルゴリズム（第2回）" class="post">
+	<footer class="entry-meta-header">
+		<span class="meta-elements date">
+			<a href="/2019/12/25/rust-DataStructures-Algorithm-BinarySearchTree/" class="article-date">
+  <time datetime="2019-12-24T23:47:32.000Z" itemprop="datePublished">2019-12-25</time>
+</a>
+		</span>
+	</footer>
+	
+	<header class="entry-header">
+		
+  
+    <h1 itemprop="name" class="entry-title">
+      <a class="article-title" href="/2019/12/25/rust-DataStructures-Algorithm-BinarySearchTree/">二分探索木 - Rustではじめるデータ構造とアルゴリズム（第2回）</a>
+    </h1>
+  
+
+	</header>
+	<div class="entry-content">
+		
+			<p><img src="/img/2019/12-25-le-ge.png" alt="簡単な二分探索木" width="800"></p>
+<p>Rustの特徴のひとつは、所有権(ownership)・移動(move)・借用(borrow)の概念です。これらがコンパイル時に厳格にチェックされることにより、古くから未定義挙動でプログラマを悩ませてきたダングリングポインタなどの問題がなくなり、メモリ安全性がもたらされます。</p>
+<p>しかし一方で、自分で多少複雑なデータ構造を定義しようとする場合にはコンパイルを通すだけでもかなりの知識・力量が要求されます。</p>
+<p>この（不定期）連載では、 <strong>Rustではじめるデータ構造とアルゴリズム</strong> と題し、プログラミングコンテストなどでよく見かける基礎的なデータ構造とアルゴリズムを、できるだけシンプルにRustで実装していきます。 <code>&amp;</code>, <code>&amp;mut</code>, <code>Box</code>, <code>Rc</code>, <code>Cell</code>, <code>RefCell</code> などの使い分けや、なぜそれを使う必要があるかの解説を、実例を通して行います。</p>
+<p>今回第2回では、 <strong>二分探索木</strong> を取り扱います。値の大小に沿った構造を持つ二分木であり、単純なデータ構造でありながら、検索やソートなど実用性が高いです。第1回の二分木に少し制約を付け足した構造になるので、未読の方はぜひ第1回のほうからご覧ください。</p>
+			
+				<p class="article-more-link">
+					<a href="/2019/12/25/rust-DataStructures-Algorithm-BinarySearchTree/#more">続きを読む</a>
+				</p>
+      
+    
+	</div>
+	<footer class="entry-footer">
+		<div class="entry-meta-footer">
+			<span class="category">
+				
+			</span>
+			<span class="tags">
+				
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Rust/">Rust</a></li></ul>
+
+			</span>
+		</div>
+	</footer>
+    
+	
+</article>
+
+
+	<hr class="article-devider">
+
+
+
+
+  
     <article id="post-二分木-Rustではじめるデータ構造とアルゴリズム（第1回）" class="post">
 	<footer class="entry-meta-header">
 		<span class="meta-elements date">
@@ -552,58 +607,6 @@
 			<span class="tags">
 				
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-			</span>
-		</div>
-	</footer>
-    
-	
-</article>
-
-
-	<hr class="article-devider">
-
-
-
-
-  
-    <article id="post-Perlで日本語全文検索できるCPANモジュール作りました" class="post">
-	<footer class="entry-meta-header">
-		<span class="meta-elements date">
-			<a href="/2013/10/11/perl-japanese-full-text-search/" class="article-date">
-  <time datetime="2013-10-11T07:41:06.000Z" itemprop="datePublished">2013-10-11</time>
-</a>
-		</span>
-	</footer>
-	
-	<header class="entry-header">
-		
-  
-    <h1 itemprop="name" class="entry-title">
-      <a class="article-title" href="/2013/10/11/perl-japanese-full-text-search/">Perlで日本語全文検索できるCPANモジュール作りました</a>
-    </h1>
-  
-
-	</header>
-	<div class="entry-content">
-		
-			<p>Perlで全文検索を手軽にできるようにするCPANモジュール，<a href="http://search.cpan.org/perldoc?Search::Fulltext" target="_blank" rel="noopener">Search::Fulltext</a> をリリースしました．<br>これ単品だと英語での全文検索ができるのですが，これまた拙作の <a href="http://search.cpan.org/perldoc?Search::Fulltext::Tokenizer::MeCab" target="_blank" rel="noopener">Search::Fulltext::Tokenizer::MeCab</a> と組み合わせて使うと <span style="font-weight:bold;">日本語全文検索</span> ができるようになります．</p>
-<p>ここでは日本語全文検索をするためのインストール方法と簡単な使い方などについて記述します．<br>尚，この記事を書いている時点での最新版は Search::Fulltext-1.02, Search::Fulltext::Tokenizer::MeCab-1.04 です．<br>最新の情報についてはperldocで確認するようにしてください．</p>
-			
-				<p class="article-more-link">
-					<a href="/2013/10/11/perl-japanese-full-text-search/#more">続きを読む</a>
-				</p>
-      
-    
-	</div>
-	<footer class="entry-footer">
-		<div class="entry-meta-footer">
-			<span class="category">
-				
-			</span>
-			<span class="tags">
-				
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/データベース/">データベース</a></li></ul>
 
 			</span>
 		</div>
