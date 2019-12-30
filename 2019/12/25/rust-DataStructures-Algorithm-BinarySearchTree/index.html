@@ -16,8 +16,8 @@
 <meta property="og:description" content="Rustの特徴のひとつは、所有権(ownership)・移動(move)・借用(borrow)の概念です。これらがコンパイル時に厳格にチェックされることにより、古くから未定義挙動でプログラマを悩ませてきたダングリングポインタなどの問題がなくなり、メモリ安全性がもたらされます。 しかし一方で、自分で多少複雑なデータ構造を定義しようとする場合にはコンパイルを通すだけでもかなりの知識・力量が要求されま">
 <meta property="og:locale" content="ja">
 <meta property="og:image" content="https://laysakura.github.io/img/2019/12-25-le-ge.png">
-<meta property="og:image" content="http://b.hatena.ne.jp/entry/image/https://laysakura.github.io/2019/12/22/rust-DataStructures-Algorithm-BinaryTree/">
-<meta property="og:image" content="http://b.hatena.ne.jp/entry/image/https://laysakura.github.io/2019/12/25/rust-DataStructures-Algorithm-BinarySearchTree/">
+<meta property="og:image" content="https://b.hatena.ne.jp/entry/image/https://laysakura.github.io/2019/12/22/rust-DataStructures-Algorithm-BinaryTree/">
+<meta property="og:image" content="https://b.hatena.ne.jp/entry/image/https://laysakura.github.io/2019/12/25/rust-DataStructures-Algorithm-BinarySearchTree/">
 <meta property="og:image" content="https://laysakura.github.io/img/2019/12-25-le-ge.png">
 <meta property="og:image" content="https://laysakura.github.io/img/2019/12-25-unbalanced-balanced.png">
 <meta property="og:image" content="https://laysakura.github.io/img/2019/12-25-contains-6.png">
@@ -27,14 +27,11 @@
 <meta property="og:image" content="https://laysakura.github.io/img/2019/12-25-bst.png">
 <meta property="og:image" content="https://laysakura.github.io/img/2019/12-25-unbalanced-balanced.png">
 <meta property="og:image" content="https://laysakura.github.io/img/2019/12-25-add.png">
-<meta property="og:updated_time" content="2019-12-29T09:37:55.965Z">
+<meta property="og:updated_time" content="2019-12-30T05:16:38.265Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二分探索木 - Rustではじめるデータ構造とアルゴリズム（第2回）">
 <meta name="twitter:description" content="Rustの特徴のひとつは、所有権(ownership)・移動(move)・借用(borrow)の概念です。これらがコンパイル時に厳格にチェックされることにより、古くから未定義挙動でプログラマを悩ませてきたダングリングポインタなどの問題がなくなり、メモリ安全性がもたらされます。 しかし一方で、自分で多少複雑なデータ構造を定義しようとする場合にはコンパイルを通すだけでもかなりの知識・力量が要求されま">
 <meta name="twitter:image" content="https://laysakura.github.io/img/2019/12-25-le-ge.png">
-  
-    <link rel="alternative" href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttps%3A%2F%2Flaysakura.github.io%2Fatom.xml" title="俺とお前とlaysakura" type="application/atom+xml">
-  
   
     <link rel="icon" href="/favicon.png">
   
@@ -103,8 +100,8 @@
 <p>今回第2回では、 <strong>二分探索木</strong> を取り扱います。値の大小に沿った構造を持つ二分木であり、単純なデータ構造でありながら、検索やソートなど実用性が高いです。第1回の二分木に少し制約を付け足した構造になるので、未読の方はぜひ第1回のほうからご覧ください。</p>
 <a id="more"></a>
 <h2><span id="連載記事一覧">連載記事一覧</span></h2><ol>
-<li><a href="/2019/12/22/rust-DataStructures-Algorithm-BinaryTree">二分木</a> <img class="hatebu" src="http://b.hatena.ne.jp/entry/image/https://laysakura.github.io/2019/12/22/rust-DataStructures-Algorithm-BinaryTree/"></li>
-<li><a href="/2019/12/25/rust-DataStructures-Algorithm-BinarySearchTree">二分探索木</a> <strong>（この記事）</strong> <img class="hatebu" src="http://b.hatena.ne.jp/entry/image/https://laysakura.github.io/2019/12/25/rust-DataStructures-Algorithm-BinarySearchTree/"></li>
+<li><a href="/2019/12/22/rust-DataStructures-Algorithm-BinaryTree">二分木</a> <img class="hatebu" src="https://b.hatena.ne.jp/entry/image/https://laysakura.github.io/2019/12/22/rust-DataStructures-Algorithm-BinaryTree/"></li>
+<li><a href="/2019/12/25/rust-DataStructures-Algorithm-BinarySearchTree">二分探索木</a> <strong>（この記事）</strong> <img class="hatebu" src="https://b.hatena.ne.jp/entry/image/https://laysakura.github.io/2019/12/25/rust-DataStructures-Algorithm-BinarySearchTree/"></li>
 <li>平衡二分探索木 <strong>（未執筆）</strong></li>
 <li>ヒープ <strong>（未執筆）</strong></li>
 <li>有向グラフ（ポインタ表現） <strong>（未執筆）</strong></li>
@@ -320,10 +317,11 @@
 	</h1>
 	<span class="copyright">
 		&copy; 2019 Sho Nakatani a.k.a. laysakura<br>
-		Modify from <a href="http://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="http://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
-		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+		Modify from <a href="https://sanographix.github.io/tumblr/apollo/" target="_blank">Apollo</a> theme, designed by <a href="https://www.sanographix.net/" target="_blank">SANOGRAPHIX.NET</a><br>
+		Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
 	</span>
 </footer>
+
     
 <script>
   var disqus_shortname = 'laysakura';
